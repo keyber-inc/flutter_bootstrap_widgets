@@ -1,5 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bootstrap_widgets_example/pages/alerts_page.dart';
+import 'package:flutter_bootstrap_widgets_example/pages/buttons_page.dart';
+import 'package:flutter_bootstrap_widgets_example/pages/forms_page.dart';
+import 'package:flutter_bootstrap_widgets_example/pages/icons_page.dart';
+import 'package:flutter_bootstrap_widgets_example/pages/modals_page.dart';
+import 'package:flutter_bootstrap_widgets_example/pages/panels_page.dart';
+import 'package:flutter_bootstrap_widgets_example/pages/tables_page.dart';
 import 'package:flutter_bootstrap_widgets_example/pages/top_page.dart';
+import 'package:flutter_bootstrap_widgets_example/pages/typography_page.dart';
 
 void main() {
   runApp(App());
@@ -66,6 +74,22 @@ class App extends StatelessWidget {
     switch (uri.path) {
       case TopPage.route:
         return TopPage();
+      case TypographyPage.route:
+        return TypographyPage();
+      case TablesPage.route:
+        return TablesPage();
+      case FormsPage.route:
+        return FormsPage();
+      case ButtonsPage.route:
+        return ButtonsPage();
+      case IconsPage.route:
+        return IconsPage();
+      case AlertsPage.route:
+        return AlertsPage();
+      case ModalsPage.route:
+        return ModalsPage();
+      case PanelsPage.route:
+        return PanelsPage();
     }
     return null;
   }

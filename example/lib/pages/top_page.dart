@@ -5,7 +5,7 @@ import 'package:flutter_bootstrap_widgets_example/default_layout.dart';
 
 class TopPage extends StatelessWidget {
   static const route = '/';
-  static const title = 'Top Page';
+  static const title = 'Top';
 
   @override
   Widget build(BuildContext context) {
