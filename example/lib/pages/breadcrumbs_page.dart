@@ -40,16 +40,14 @@ class BreadcrumbsPage extends StatelessWidget {
                       children: [
                         BootstrapBreadcrumbsItem(
                           text: 'Bootstrap3',
-                          url: 'http://bootstrap3.cyberlab.info',
-                          onTap: (url) {
-                            print('BootstrapBreadcrumbsItem: onTap(): $url');
+                          onTap: () {
+                            print('onTap()');
                           },
                         ),
                         BootstrapBreadcrumbsItem(
                           text: 'Component',
-                          url: 'http://bootstrap3.cyberlab.info/components/',
-                          onTap: (url) {
-                            print('BootstrapBreadcrumbsItem: onTap(): $url');
+                          onTap: () {
+                            print('onTap()');
                           },
                         ),
                         BootstrapBreadcrumbsItem(
@@ -62,17 +60,15 @@ class BreadcrumbsPage extends StatelessWidget {
                       children: [
                         BootstrapBreadcrumbsItem(
                           text: 'Bootstrap3',
-                          url: 'http://bootstrap3.cyberlab.info',
                           icon: Icons.home,
-                          onTap: (url) {
-                            print('BootstrapBreadcrumbsItem: onTap(): $url');
+                          onTap: () {
+                            print('onTap()');
                           },
                         ),
                         BootstrapBreadcrumbsItem(
                           text: 'Component',
-                          url: 'http://bootstrap3.cyberlab.info/components/',
-                          onTap: (url) {
-                            print('BootstrapBreadcrumbsItem: onTap(): $url');
+                          onTap: () {
+                            print('onTap()');
                           },
                         ),
                         BootstrapBreadcrumbsItem(

@@ -36,39 +36,31 @@ class BootstrapBreadcrumbs extends StatelessWidget {
   }
 
   Widget _buildItemText(BootstrapBreadcrumbsItem item) {
-    final color = item.url != null
+    final color = item.onTap != null
         ? BootstrapColors.anchorText
         : item.active
             ? BootstrapColors.breadcrumbsItemActiveText
             : BootstrapColors.breadcrumbsItemDefaultText;
-    final text = Wrap(
-      children: [
-        item.icon != null
-            ? Icon(
-                item.icon,
-                size: 17,
-                color: color,
-              )
-            : SizedBox(),
-        Text(
-          item.text,
-          style: TextStyle(
-            color: color,
-          ),
-        ),
-      ],
-    );
 
-    if (item.url == null) {
-      return text;
-    }
     return InkWell(
-      onTap: () {
-        if (item.onTap != null) {
-          item.onTap(item.url);
-        }
-      },
-      child: text,
+      onTap: item.onTap,
+      child: Wrap(
+        children: [
+          item.icon != null
+              ? Icon(
+                  item.icon,
+                  size: 17,
+                  color: color,
+                )
+              : SizedBox(),
+          Text(
+            item.text,
+            style: TextStyle(
+              color: color,
+            ),
+          ),
+        ],
+      ),
     );
   }
 
@@ -89,14 +81,12 @@ class BootstrapBreadcrumbsItem {
   const BootstrapBreadcrumbsItem({
     @required this.text,
     this.icon,
-    this.url,
     this.onTap,
     this.active = false,
   });
 
   final String text;
-  final String url;
   final bool active;
-  final Function(String url) onTap;
+  final VoidCallback onTap;
   final IconData icon;
 }
