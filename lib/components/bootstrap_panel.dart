@@ -94,6 +94,7 @@ class BootstrapPanel extends StatelessWidget {
               Container(
                 color: BootstrapColors.bodyBackground,
                 padding: const EdgeInsets.all(16.0),
+                width: double.infinity,
                 child: body,
               ),
             if (footer != null)

@@ -17,7 +17,8 @@ class BootstrapColors {
   static const Color grayLighter = Color(0xFFEEEEEE);
 
   /// reboot
-  static const Color bodyBackground = Color(0xFFF8F8F8);
+  static const Color bodyBackground = Colors.white;
+  static const Color anchorText = primary;
 
   /// panel
   static const Color panelDefaultBackground = defaults;
@@ -103,4 +104,9 @@ class BootstrapColors {
   /// code
   static const Color codeDefaultText = Color(0xFFC7254E);
   static const Color codeDefaultBackground = Color(0xFFF9F2F4);
+
+  /// breadcrumbs
+  static const Color breadcrumbsSeparation = Color(0xFFCCCCCC);
+  static const Color breadcrumbsItemDefaultText = grayDark;
+  static const Color breadcrumbsItemActiveText = grayLight;
 }

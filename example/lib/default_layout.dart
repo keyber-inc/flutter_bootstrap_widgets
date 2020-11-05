@@ -3,6 +3,7 @@ import 'package:flutter_admin_scaffold/flutter_admin_scaffold.dart';
 import 'package:flutter_bootstrap/flutter_bootstrap.dart';
 import 'package:flutter_bootstrap_widgets/components/bootstrap_colors.dart';
 import 'package:flutter_bootstrap_widgets_example/pages/alerts_page.dart';
+import 'package:flutter_bootstrap_widgets_example/pages/breadcrumbs_page.dart';
 import 'package:flutter_bootstrap_widgets_example/pages/buttons_page.dart';
 import 'package:flutter_bootstrap_widgets_example/pages/forms_page.dart';
 import 'package:flutter_bootstrap_widgets_example/pages/icons_page.dart';
@@ -57,6 +58,10 @@ class DefaultLayout extends StatelessWidget {
         MenuItemData(
           title: IconsPage.title,
           route: IconsPage.route,
+        ),
+        MenuItemData(
+          title: BreadcrumbsPage.title,
+          route: BreadcrumbsPage.route,
         ),
         MenuItemData(
           title: AlertsPage.title,
