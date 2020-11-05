@@ -16,8 +16,10 @@ class BootstrapColors {
   static const Color grayLight = Color(0xFF777777);
   static const Color grayLighter = Color(0xFFEEEEEE);
 
+  /// reboot
+  static const Color bodyBackground = Color(0xFFF8F8F8);
+
   /// panel
-  static const Color panelBodyBackground = Color(0xFFF8F8F8);
   static const Color panelDefaultBackground = defaults;
   static const Color panelDefaultText = grayDark;
   static const Color panelDefaultBorder = Color(0xFFDDDDDD);

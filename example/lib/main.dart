@@ -1,58 +1,72 @@
 import 'package:flutter/material.dart';
-import 'dart:async';
-
-import 'package:flutter/services.dart';
-import 'package:flutter_bootstrap_widgets/flutter_bootstrap_widgets.dart';
+import 'package:flutter_bootstrap_widgets_example/pages/top_page.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(App());
 }
 
-class MyApp extends StatefulWidget {
-  @override
-  _MyAppState createState() => _MyAppState();
-}
-
-class _MyAppState extends State<MyApp> {
-  String _platformVersion = 'Unknown';
-
-  @override
-  void initState() {
-    super.initState();
-    initPlatformState();
-  }
-
-  // Platform messages are asynchronous, so we initialize in an async method.
-  Future<void> initPlatformState() async {
-    String platformVersion;
-    // Platform messages may fail, so we use a try/catch PlatformException.
-    try {
-      platformVersion = await FlutterBootstrapWidgets.platformVersion;
-    } on PlatformException {
-      platformVersion = 'Failed to get platform version.';
-    }
-
-    // If the widget was removed from the tree while the asynchronous platform
-    // message was in flight, we want to discard the reply rather than calling
-    // setState to update our non-existent appearance.
-    if (!mounted) return;
-
-    setState(() {
-      _platformVersion = platformVersion;
-    });
-  }
+class App extends StatelessWidget {
+  static const MaterialColor themeBlack = MaterialColor(
+    _themeBlackPrimaryValue,
+    <int, Color>{
+      50: Color(_themeBlackPrimaryValue),
+      100: Color(_themeBlackPrimaryValue),
+      200: Color(_themeBlackPrimaryValue),
+      300: Color(_themeBlackPrimaryValue),
+      400: Color(_themeBlackPrimaryValue),
+      500: Color(_themeBlackPrimaryValue),
+      600: Color(_themeBlackPrimaryValue),
+      700: Color(_themeBlackPrimaryValue),
+      800: Color(_themeBlackPrimaryValue),
+      900: Color(_themeBlackPrimaryValue),
+    },
+  );
+  static const int _themeBlackPrimaryValue = 0xFF222222;
+  static const Color themeTextPrimary = Color(0xFF9D9D9D);
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Plugin example app'),
+      debugShowCheckedModeBanner: false,
+      title: 'Sample',
+      theme: ThemeData(
+        primarySwatch: themeBlack,
+        textTheme: Theme.of(context).textTheme.apply(
+              bodyColor: themeBlack,
+            ),
+        primaryTextTheme: Theme.of(context).textTheme.apply(
+              bodyColor: themeTextPrimary,
+            ),
+        primaryIconTheme: IconThemeData(
+          color: themeTextPrimary,
         ),
-        body: Center(
-          child: Text('Running on: $_platformVersion\n'),
-        ),
+        visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
+      onGenerateRoute: (settings) {
+        print('onGenerateRoute(): settings = $settings}');
+        final page = _getPageWidget(settings);
+        if (page != null) {
+          return PageRouteBuilder(
+              settings: settings,
+              pageBuilder: (_, __, ___) => page,
+              transitionsBuilder: (_, anim, __, child) {
+                return FadeTransition(
+                  opacity: anim,
+                  child: child,
+                );
+              });
+        }
+        return null;
+      },
     );
+  }
+
+  Widget _getPageWidget(RouteSettings settings) {
+    final uri = Uri.parse(settings.name);
+    switch (uri.path) {
+      case TopPage.route:
+        return TopPage();
+    }
+    return null;
   }
 }

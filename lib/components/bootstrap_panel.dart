@@ -92,7 +92,7 @@ class BootstrapPanel extends StatelessWidget {
               ),
             if (body != null)
               Container(
-                color: BootstrapColors.panelBodyBackground,
+                color: BootstrapColors.bodyBackground,
                 padding: const EdgeInsets.all(16.0),
                 child: body,
               ),
