@@ -82,6 +82,7 @@ class DefaultLayout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AdminScaffold(
+      backgroundColor: BootstrapColors.bodyBackground,
       appBar: AppBar(
         title: const Text('Sample'),
       ),
@@ -98,9 +99,6 @@ class DefaultLayout extends StatelessWidget {
       ),
       body: BootstrapContainer(
         fluid: true,
-        decoration: BoxDecoration(
-          color: BootstrapColors.bodyBackground,
-        ),
         children: children,
       ),
     );

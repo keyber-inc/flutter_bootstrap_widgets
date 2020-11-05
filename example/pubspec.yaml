@@ -14,7 +14,7 @@ dependencies:
     path: ../
 
   cupertino_icons: ^1.0.0
-  flutter_admin_scaffold: ^0.0.1+3
+  flutter_admin_scaffold: ^0.0.2
   flutter_bootstrap: ^1.0.1
 
 dev_dependencies:

@@ -36,9 +36,10 @@ class TypographyPage extends StatelessWidget {
               child: BootstrapPanel(
                 header: SelectableText('Headings'),
                 body: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Row(
-                      crossAxisAlignment: CrossAxisAlignment.baseline,
+                    Wrap(
+                      crossAxisAlignment: WrapCrossAlignment.end,
                       children: [
                         BootstrapHeading.h1(
                           child: SelectableText('Heading 1'),
@@ -49,8 +50,8 @@ class TypographyPage extends StatelessWidget {
                         ),
                       ],
                     ),
-                    Row(
-                      crossAxisAlignment: CrossAxisAlignment.baseline,
+                    Wrap(
+                      crossAxisAlignment: WrapCrossAlignment.end,
                       children: [
                         BootstrapHeading.h2(
                           child: SelectableText('Heading 2'),
@@ -61,8 +62,8 @@ class TypographyPage extends StatelessWidget {
                         ),
                       ],
                     ),
-                    Row(
-                      crossAxisAlignment: CrossAxisAlignment.baseline,
+                    Wrap(
+                      crossAxisAlignment: WrapCrossAlignment.end,
                       children: [
                         BootstrapHeading.h3(
                           child: SelectableText('Heading 3'),
@@ -73,8 +74,8 @@ class TypographyPage extends StatelessWidget {
                         ),
                       ],
                     ),
-                    Row(
-                      crossAxisAlignment: CrossAxisAlignment.baseline,
+                    Wrap(
+                      crossAxisAlignment: WrapCrossAlignment.end,
                       children: [
                         BootstrapHeading.h4(
                           child: SelectableText('Heading 4'),
@@ -85,8 +86,8 @@ class TypographyPage extends StatelessWidget {
                         ),
                       ],
                     ),
-                    Row(
-                      crossAxisAlignment: CrossAxisAlignment.baseline,
+                    Wrap(
+                      crossAxisAlignment: WrapCrossAlignment.end,
                       children: [
                         BootstrapHeading.h5(
                           child: SelectableText('Heading 5'),
@@ -97,8 +98,8 @@ class TypographyPage extends StatelessWidget {
                         ),
                       ],
                     ),
-                    Row(
-                      crossAxisAlignment: CrossAxisAlignment.baseline,
+                    Wrap(
+                      crossAxisAlignment: WrapCrossAlignment.end,
                       children: [
                         BootstrapHeading.h6(
                           child: SelectableText('Heading 6'),

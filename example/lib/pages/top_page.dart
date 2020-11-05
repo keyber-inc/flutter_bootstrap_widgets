@@ -18,8 +18,22 @@ class TopPage extends StatelessWidget {
             BootstrapCol(
               sizes: 'col-12',
               child: BootstrapHeading.h1(
-                child: SelectableText(title),
+                child: SelectableText('flutter_bootstrap_widgets'),
                 type: BootstrapHeadingType.pageHeader,
+              ),
+            ),
+          ],
+        ),
+        BootstrapRow(
+          height: 0,
+          children: [
+            BootstrapCol(
+              sizes: 'col-12',
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text('A bundle of Bootstrap 3 style widgets.'),
+                ],
               ),
             ),
           ],
