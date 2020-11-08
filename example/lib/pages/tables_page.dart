@@ -33,23 +33,36 @@ class TablesPage extends StatelessWidget {
                 header: const Text('DataTables Advanced Tables'),
                 body: BootstrapDataTable(
                   header: Text('DataTables Advanced Tables'),
-                  columns: [
-                    BootstrapDataColumn(label: Text('Rendering engine')),
-                    BootstrapDataColumn(label: Text('Browser')),
-                    BootstrapDataColumn(label: Text('Platform(s)')),
-                    BootstrapDataColumn(label: Text('Engine version')),
-                    BootstrapDataColumn(
-                        label: Text('CSS grade'), sortable: false),
-                  ],
-                  source: BootstrapDataTableSource<SampleData1>(
-                    rows: sampleDataRows1,
-                    getCell: (data, columnIndex) {
-                      return DataCell(Text(data.getText(columnIndex)));
-                    },
-                    getText: (data, columnIndex) {
-                      return data.getText(columnIndex);
-                    },
-                    cellCount: 5,
+                  source: BootstrapDataTableSource(
+                    columnConfigs: [
+                      BootstrapColumnConfig(
+                        name: 'renderingEngine',
+                        label: Text('Rendering engine'),
+                        dataCell: (value) => DataCell(Text('$value')),
+                      ),
+                      BootstrapColumnConfig(
+                        name: 'browser',
+                        label: Text('Browser'),
+                        dataCell: (value) => DataCell(Text('$value')),
+                      ),
+                      BootstrapColumnConfig(
+                        name: 'platform',
+                        label: Text('Platform(s)'),
+                        dataCell: (value) => DataCell(Text('$value')),
+                      ),
+                      BootstrapColumnConfig(
+                        name: 'engineVersion',
+                        label: Text('Engine version'),
+                        dataCell: (value) => DataCell(Text('$value')),
+                      ),
+                      BootstrapColumnConfig(
+                        name: 'cssGrade',
+                        label: Text('CSS grade'),
+                        dataCell: (value) => DataCell(Text('$value')),
+                        sortable: false,
+                      ),
+                    ],
+                    rows: sampleDataRows1.map((row) => row.toMap()).toList(),
                   ),
                   horizontalMargin: 100,
                 ),
@@ -61,7 +74,7 @@ class TablesPage extends StatelessWidget {
     );
   }
 
-  final sampleDataRows1 = [
+  final List<SampleData1> sampleDataRows1 = [
     SampleData1.fromList(
         ['Trident', 'Internet Explorer 4.0', 'Win 95+', '4', 'X']),
     SampleData1.fromList(
@@ -176,19 +189,13 @@ class SampleData1 {
   final String engineVersion;
   final String cssGrade;
 
-  String getText(int index) {
-    switch (index) {
-      case 0:
-        return renderingEngine;
-      case 1:
-        return browser;
-      case 2:
-        return platform;
-      case 3:
-        return engineVersion;
-      case 4:
-        return cssGrade;
-    }
-    throw AssertionError();
+  Map<String, dynamic> toMap() {
+    return {
+      'renderingEngine': renderingEngine,
+      'browser': browser,
+      'platform': platform,
+      'engineVersion': engineVersion,
+      'cssGrade': cssGrade,
+    };
   }
 }

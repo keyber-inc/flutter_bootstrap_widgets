@@ -6,7 +6,6 @@ class BootstrapDataTable extends StatefulWidget {
     Key key,
     @required this.header,
     this.actions,
-    @required this.columns,
     this.sortColumnIndex = 0,
     this.sortAscending = true,
     this.onSelectAll,
@@ -31,7 +30,6 @@ class BootstrapDataTable extends StatefulWidget {
 
   final Widget header;
   final List<Widget> actions;
-  final List<BootstrapDataColumn> columns;
   final int sortColumnIndex;
   final bool sortAscending;
   final ValueSetter<bool> onSelectAll;
@@ -70,12 +68,12 @@ class _BootstrapDataTableState extends State<BootstrapDataTable> {
     return PaginatedDataTable(
       header: widget.header,
       actions: widget.actions,
-      columns: widget.columns.map((column) {
+      columns: widget.source.columnConfigs.map((config) {
         return DataColumn(
-          label: column.label,
-          tooltip: column.tooltip,
-          numeric: column.numeric,
-          onSort: column.sortable
+          label: config.label,
+          tooltip: config.tooltip,
+          numeric: config.numeric,
+          onSort: config.sortable
               ? (columnIndex, ascending) {
                   widget.source.sort(columnIndex, ascending);
                   setState(() {
@@ -111,24 +109,40 @@ class _BootstrapDataTableState extends State<BootstrapDataTable> {
   }
 }
 
-class BootstrapDataTableSource<T> extends DataTableSource {
-  BootstrapDataTableSource({
-    @required this.rows,
-    @required this.getCell,
-    @required this.getText,
-    @required this.cellCount,
+class BootstrapColumnConfig {
+  const BootstrapColumnConfig({
+    @required this.name,
+    @required this.label,
+    @required this.dataCell,
+    this.tooltip,
+    this.numeric = false,
+    this.sortable = true,
+    this.comparable,
   });
 
-  final List<T> rows;
-  final DataCell Function(T data, int columnIndex) getCell;
-  final String Function(T data, int columnIndex) getText;
-  final int cellCount;
+  final String name;
+  final Widget label;
+  final DataCell Function(dynamic value) dataCell;
+  final String tooltip;
+  final bool numeric;
+  final bool sortable;
+  final Comparable Function(dynamic value) comparable;
+}
+
+class BootstrapDataTableSource extends DataTableSource {
+  BootstrapDataTableSource({
+    @required this.columnConfigs,
+    @required this.rows,
+  });
+
+  final List<BootstrapColumnConfig> columnConfigs;
+  final List<Map<String, dynamic>> rows;
 
   @override
   DataRow getRow(int index) {
     List<DataCell> cells = [];
-    for (var i = 0; i < cellCount; i++) {
-      cells.add(getCell(rows[index], i));
+    for (final dataConfig in columnConfigs) {
+      cells.add(dataConfig.dataCell(rows[index][dataConfig.name]));
     }
     return DataRow.byIndex(
       index: index,
@@ -146,28 +160,15 @@ class BootstrapDataTableSource<T> extends DataTableSource {
   int get selectedRowCount => 0;
 
   void sort(int columnIndex, bool ascending) {
-    rows.sort((a, b) {
-      final aValue = getText(a, columnIndex);
-      final bValue = getText(b, columnIndex);
+    final name = columnConfigs[columnIndex].name;
+    final cmp = columnConfigs[columnIndex].comparable;
+    rows.sort((Map<String, dynamic> a, Map<String, dynamic> b) {
+      final aValue = cmp != null ? cmp(a[name]) : a[name].toString();
+      final bValue = cmp != null ? cmp(b[name]) : b[name].toString();
       return ascending
           ? Comparable.compare(aValue, bValue)
           : Comparable.compare(bValue, aValue);
     });
     notifyListeners();
   }
-}
-
-class BootstrapDataColumn extends DataColumn {
-  const BootstrapDataColumn({
-    @required Widget label,
-    String tooltip,
-    bool numeric = false,
-    this.sortable = true,
-  }) : super(
-          label: label,
-          tooltip: tooltip,
-          numeric: numeric,
-        );
-
-  final bool sortable;
 }
