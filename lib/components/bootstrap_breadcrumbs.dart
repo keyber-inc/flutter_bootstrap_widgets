@@ -4,11 +4,9 @@ import 'package:flutter_bootstrap_widgets/components/bootstrap_colors.dart';
 class BootstrapBreadcrumbs extends StatelessWidget {
   const BootstrapBreadcrumbs({
     @required this.children,
-    this.isExpanded = false,
   });
 
   final List<BootstrapBreadcrumbsItem> children;
-  final bool isExpanded;
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +20,6 @@ class BootstrapBreadcrumbs extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(bottom: 20),
       child: Container(
-        width: double.infinity,
         decoration: BoxDecoration(
           color: BootstrapColors.defaults,
           borderRadius: BorderRadius.circular(4),

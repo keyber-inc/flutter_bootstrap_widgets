@@ -91,6 +91,30 @@ class BreadcrumbsPage extends StatelessWidget {
                         ),
                       ],
                     ),
+                    Container(
+                      width: double.infinity,
+                      child: BootstrapBreadcrumbs(
+                        children: [
+                          BootstrapBreadcrumbsItem(
+                            text: 'Bootstrap3',
+                            icon: Icons.home,
+                            onTap: () {
+                              print('onTap()');
+                            },
+                          ),
+                          BootstrapBreadcrumbsItem(
+                            text: 'Component',
+                            onTap: () {
+                              print('onTap()');
+                            },
+                          ),
+                          BootstrapBreadcrumbsItem(
+                            text: 'Breadcrumbs',
+                            active: true,
+                          ),
+                        ],
+                      ),
+                    ),
                   ],
                 ),
               ),
