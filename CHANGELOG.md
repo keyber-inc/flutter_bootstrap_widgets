@@ -1,3 +1,7 @@
+## 0.0.3 - November 8, 2020
+
+- Bug fix
+
 ## 0.0.2 - November 8, 2020
 
 - Bug fix
