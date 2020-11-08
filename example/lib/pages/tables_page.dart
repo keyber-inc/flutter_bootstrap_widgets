@@ -32,6 +32,8 @@ class TablesPage extends StatelessWidget {
               child: BootstrapPanel(
                 header: const Text('DataTables Advanced Tables'),
                 body: BootstrapDataTable(
+                  sortAscending: false,
+                  sortColumnName: 'browser',
                   header: Text('DataTables Advanced Tables'),
                   source: BootstrapDataTableSource(
                     columnConfigs: [

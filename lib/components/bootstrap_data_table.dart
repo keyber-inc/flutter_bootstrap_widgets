@@ -6,7 +6,7 @@ class BootstrapDataTable extends StatefulWidget {
     Key key,
     @required this.header,
     this.actions,
-    this.sortColumnIndex = 0,
+    this.sortColumnName,
     this.sortAscending = true,
     this.onSelectAll,
     this.dataRowHeight = kMinInteractiveDimension,
@@ -30,7 +30,7 @@ class BootstrapDataTable extends StatefulWidget {
 
   final Widget header;
   final List<Widget> actions;
-  final int sortColumnIndex;
+  final String sortColumnName;
   final bool sortAscending;
   final ValueSetter<bool> onSelectAll;
   final double dataRowHeight;
@@ -58,9 +58,26 @@ class _BootstrapDataTableState extends State<BootstrapDataTable> {
   @override
   void initState() {
     super.initState();
-    _sortColumnIndex = widget.sortColumnIndex;
+    _sortColumnIndex = _toSortColumnIndex(widget.source, widget.sortColumnName);
     _sortAscending = widget.sortAscending;
     _rowsPerPage = widget.rowsPerPage;
+  }
+
+  /// sortColumnName => sortColumnIndex
+  int _toSortColumnIndex(
+    BootstrapDataTableSource source,
+    String sortColumnName,
+  ) {
+    int index;
+    if (sortColumnName != null) {
+      source.columnConfigs.asMap().forEach((i, columnConfig) {
+        if (columnConfig.name == sortColumnName) {
+          index = i;
+          return;
+        }
+      });
+    }
+    return index;
   }
 
   @override
