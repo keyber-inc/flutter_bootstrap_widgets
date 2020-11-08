@@ -1,18 +1,18 @@
-// You have generated a new plugin project without
-// specifying the `--platforms` flag. A plugin project supports no platforms is generated.
-// To add platforms, run `flutter create -t plugin --platforms <platforms> .` under the same
-// directory. You can also find a detailed instruction on how to add platforms in the `pubspec.yaml` at https://flutter.dev/docs/development/packages-and-plugins/developing-packages#plugin-platforms.
-
-import 'dart:async';
-
-import 'package:flutter/services.dart';
-
-class FlutterBootstrapWidgets {
-  static const MethodChannel _channel =
-      const MethodChannel('flutter_bootstrap_widgets');
-
-  static Future<String> get platformVersion async {
-    final String version = await _channel.invokeMethod('getPlatformVersion');
-    return version;
-  }
-}
+export 'components/bootstrap_alert.dart';
+export 'components/bootstrap_breadcrumbs.dart';
+export 'components/bootstrap_button.dart';
+export 'components/bootstrap_checkbox.dart';
+export 'components/bootstrap_code_text_span.dart';
+export 'components/bootstrap_colors.dart';
+export 'components/bootstrap_data_table.dart';
+export 'components/bootstrap_device_mode.dart';
+export 'components/bootstrap_form_group.dart';
+export 'components/bootstrap_heading.dart';
+export 'components/bootstrap_input_decoration.dart';
+export 'components/bootstrap_label.dart';
+export 'components/bootstrap_list.dart';
+export 'components/bootstrap_modal.dart';
+export 'components/bootstrap_panel.dart';
+export 'components/bootstrap_paragraphs.dart';
+export 'components/bootstrap_radio.dart';
+export 'components/bootstrap_select.dart';
