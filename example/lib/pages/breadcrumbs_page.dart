@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bootstrap/flutter_bootstrap.dart';
 import 'package:flutter_bootstrap_widgets/flutter_bootstrap_widgets.dart';
-
 import 'package:flutter_bootstrap_widgets_example/default_layout.dart';
 
 class BreadcrumbsPage extends StatelessWidget {
@@ -89,6 +88,33 @@ class BreadcrumbsPage extends StatelessWidget {
                           text: 'Breadcrumbs',
                         ),
                       ],
+                    ),
+                    Container(
+                      child: BootstrapBreadcrumbs(
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                        ),
+                        padding: const EdgeInsets.all(0),
+                        children: [
+                          BootstrapBreadcrumbsItem(
+                            text: 'Bootstrap3',
+                            icon: Icons.home,
+                            onTap: () {
+                              print('onTap()');
+                            },
+                          ),
+                          BootstrapBreadcrumbsItem(
+                            text: 'Component',
+                            onTap: () {
+                              print('onTap()');
+                            },
+                          ),
+                          BootstrapBreadcrumbsItem(
+                            text: 'Breadcrumbs',
+                            active: true,
+                          ),
+                        ],
+                      ),
                     ),
                     Container(
                       width: double.infinity,

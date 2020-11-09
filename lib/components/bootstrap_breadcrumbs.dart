@@ -4,9 +4,16 @@ import 'package:flutter_bootstrap_widgets/components/bootstrap_colors.dart';
 class BootstrapBreadcrumbs extends StatelessWidget {
   const BootstrapBreadcrumbs({
     @required this.children,
+    this.decoration = const BoxDecoration(
+      color: BootstrapColors.defaults,
+      borderRadius: BorderRadius.all(Radius.circular(4)),
+    ),
+    this.padding = const EdgeInsets.symmetric(vertical: 8, horizontal: 15),
   });
 
   final List<BootstrapBreadcrumbsItem> children;
+  final Decoration decoration;
+  final EdgeInsetsGeometry padding;
 
   @override
   Widget build(BuildContext context) {
@@ -20,11 +27,8 @@ class BootstrapBreadcrumbs extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(bottom: 20),
       child: Container(
-        decoration: BoxDecoration(
-          color: BootstrapColors.defaults,
-          borderRadius: BorderRadius.circular(4),
-        ),
-        padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 15),
+        decoration: decoration,
+        padding: padding,
         child: Wrap(
           children: items,
         ),
