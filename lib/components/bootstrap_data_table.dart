@@ -13,7 +13,7 @@ class BootstrapDataTable extends StatefulWidget {
     this.headingRowHeight = 56.0,
     this.horizontalMargin = 24.0,
     this.columnSpacing = 56.0,
-    this.showCheckboxColumn = true,
+    this.showCheckboxColumn = false,
     this.initialFirstRowIndex = 0,
     this.onPageChanged,
     this.enableRowsPerPage = true,
@@ -150,10 +150,12 @@ class BootstrapDataTableSource extends DataTableSource {
   BootstrapDataTableSource({
     @required this.columnConfigs,
     @required this.rows,
+    this.onTapRow,
   });
 
   final List<BootstrapColumnConfig> columnConfigs;
   final List<Map<String, dynamic>> rows;
+  final Function(Map<String, dynamic> row, int index) onTapRow;
 
   @override
   DataRow getRow(int index) {
@@ -162,9 +164,13 @@ class BootstrapDataTableSource extends DataTableSource {
       cells.add(dataConfig.dataCell(rows[index][dataConfig.name]));
     }
     return DataRow.byIndex(
-      index: index,
-      cells: cells,
-    );
+        index: index,
+        cells: cells,
+        onSelectChanged: (selected) {
+          if (onTapRow != null) {
+            onTapRow(rows[index], index);
+          }
+        });
   }
 
   @override

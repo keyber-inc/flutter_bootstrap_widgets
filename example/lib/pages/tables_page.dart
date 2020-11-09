@@ -65,6 +65,9 @@ class TablesPage extends StatelessWidget {
                       ),
                     ],
                     rows: sampleDataRows1.map((row) => row.toMap()).toList(),
+                    onTapRow: (row, index) {
+                      print('$index: $row');
+                    },
                   ),
                   horizontalMargin: 100,
                 ),
