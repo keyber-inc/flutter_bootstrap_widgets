@@ -106,6 +106,11 @@ class TypographyPage extends StatelessWidget {
                         ),
                       ],
                     ),
+                    BootstrapHeading.h1(
+                      child: SelectableText('PageHeader'),
+                      type: BootstrapHeadingType.pageHeader,
+                      borderColor: Colors.blueGrey,
+                    ),
                   ],
                 ),
               ),

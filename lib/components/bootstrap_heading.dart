@@ -9,6 +9,7 @@ class BootstrapHeading extends StatelessWidget {
     this.type = BootstrapHeadingType.none,
     this.marginTop = 20,
     this.marginBottom = 10,
+    this.borderColor = BootstrapColors.grayLighter,
   }) : _fontSize = 36;
 
   const BootstrapHeading.h2({
@@ -17,6 +18,7 @@ class BootstrapHeading extends StatelessWidget {
     this.type = BootstrapHeadingType.none,
     this.marginTop = 20,
     this.marginBottom = 10,
+    this.borderColor = BootstrapColors.grayLighter,
   }) : _fontSize = 30;
 
   const BootstrapHeading.h3({
@@ -25,6 +27,7 @@ class BootstrapHeading extends StatelessWidget {
     this.type = BootstrapHeadingType.none,
     this.marginTop = 20,
     this.marginBottom = 10,
+    this.borderColor = BootstrapColors.grayLighter,
   }) : _fontSize = 24;
 
   const BootstrapHeading.h4({
@@ -33,6 +36,7 @@ class BootstrapHeading extends StatelessWidget {
     this.type = BootstrapHeadingType.none,
     this.marginTop = 10,
     this.marginBottom = 10,
+    this.borderColor = BootstrapColors.grayLighter,
   }) : _fontSize = 18;
 
   const BootstrapHeading.h5({
@@ -41,6 +45,7 @@ class BootstrapHeading extends StatelessWidget {
     this.type = BootstrapHeadingType.none,
     this.marginTop = 10,
     this.marginBottom = 10,
+    this.borderColor = BootstrapColors.grayLighter,
   }) : _fontSize = 14;
 
   const BootstrapHeading.h6({
@@ -49,6 +54,7 @@ class BootstrapHeading extends StatelessWidget {
     this.type = BootstrapHeadingType.none,
     this.marginTop = 10,
     this.marginBottom = 10,
+    this.borderColor = BootstrapColors.grayLighter,
   }) : _fontSize = 12;
 
   static const _fontWeight = FontWeight.w500;
@@ -58,6 +64,7 @@ class BootstrapHeading extends StatelessWidget {
   final double _fontSize;
   final double marginTop;
   final double marginBottom;
+  final Color borderColor;
 
   @override
   Widget build(BuildContext context) {
@@ -106,7 +113,7 @@ class BootstrapHeading extends StatelessWidget {
                 padding: EdgeInsets.only(bottom: marginBottom - 1.4),
                 child: Divider(
                   thickness: 1.4,
-                  color: BootstrapColors.grayLighter,
+                  color: borderColor,
                 ),
               ),
             ],
