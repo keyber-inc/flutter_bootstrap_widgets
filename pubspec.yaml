@@ -1,6 +1,6 @@
 name: flutter_bootstrap_widgets
 description: A bundle of Bootstrap 3 style widgets.
-version: 0.0.4
+version: 0.0.4+1
 homepage: https://github.com/keyber-inc/flutter_bootstrap_widgets
 
 environment:

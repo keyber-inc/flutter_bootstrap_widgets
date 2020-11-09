@@ -1,7 +1,8 @@
-## 0.0.4 - November 9, 2020
+## 0.0.4+1 - November 9, 2020
 
 - Add borderColor param to BootstrapHeading
 - Add decoration and padding param to BootstrapBreadcrumbs
+- Add onTapRow param to BootstrapDataTableSource
 
 ## 0.0.3 - November 8, 2020
 
