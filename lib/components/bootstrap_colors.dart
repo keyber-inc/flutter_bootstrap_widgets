@@ -109,4 +109,12 @@ class BootstrapColors {
   static const Color breadcrumbsSeparation = Color(0xFFCCCCCC);
   static const Color breadcrumbsItemDefaultText = grayDark;
   static const Color breadcrumbsItemActiveText = grayLight;
+
+  /// label
+  static const Color labelDefaultBackground = grayLight;
+  static const Color labelPrimaryBackground = primary;
+  static const Color labelInfoBackground = info;
+  static const Color labelSuccessBackground = success;
+  static const Color labelWarningBackground = warning;
+  static const Color labelDangerBackground = danger;
 }

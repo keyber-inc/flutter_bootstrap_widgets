@@ -4,6 +4,7 @@ import 'package:flutter_bootstrap_widgets_example/pages/breadcrumbs_page.dart';
 import 'package:flutter_bootstrap_widgets_example/pages/buttons_page.dart';
 import 'package:flutter_bootstrap_widgets_example/pages/forms_page.dart';
 import 'package:flutter_bootstrap_widgets_example/pages/icons_page.dart';
+import 'package:flutter_bootstrap_widgets_example/pages/labels_page.dart';
 import 'package:flutter_bootstrap_widgets_example/pages/modals_page.dart';
 import 'package:flutter_bootstrap_widgets_example/pages/panels_page.dart';
 import 'package:flutter_bootstrap_widgets_example/pages/tables_page.dart';
@@ -87,6 +88,8 @@ class App extends StatelessWidget {
         return IconsPage();
       case BreadcrumbsPage.route:
         return BreadcrumbsPage();
+      case LabelsPage.route:
+        return LabelsPage();
       case AlertsPage.route:
         return AlertsPage();
       case ModalsPage.route:

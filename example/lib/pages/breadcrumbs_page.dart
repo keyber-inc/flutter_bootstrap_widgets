@@ -34,7 +34,7 @@ class BreadcrumbsPage extends StatelessWidget {
                 body: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    BootstrapLabel(
+                    BootstrapLabelText(
                       child: Text("Default"),
                     ),
                     BootstrapBreadcrumbs(
@@ -57,7 +57,7 @@ class BreadcrumbsPage extends StatelessWidget {
                         ),
                       ],
                     ),
-                    BootstrapLabel(
+                    BootstrapLabelText(
                       child: Text("With Icon"),
                     ),
                     BootstrapBreadcrumbs(
@@ -81,7 +81,7 @@ class BreadcrumbsPage extends StatelessWidget {
                         ),
                       ],
                     ),
-                    BootstrapLabel(
+                    BootstrapLabelText(
                       child: Text("No Actions"),
                     ),
                     BootstrapBreadcrumbs(
@@ -98,7 +98,7 @@ class BreadcrumbsPage extends StatelessWidget {
                         ),
                       ],
                     ),
-                    BootstrapLabel(
+                    BootstrapLabelText(
                       child: Text(
                           "White backgroundColor, zero margin and padding"),
                     ),
@@ -130,7 +130,7 @@ class BreadcrumbsPage extends StatelessWidget {
                         ],
                       ),
                     ),
-                    BootstrapLabel(
+                    BootstrapLabelText(
                       child: Text("Expanded"),
                     ),
                     Container(
@@ -157,7 +157,7 @@ class BreadcrumbsPage extends StatelessWidget {
                         ],
                       ),
                     ),
-                    BootstrapLabel(
+                    BootstrapLabelText(
                       child: Text("Large"),
                     ),
                     Container(

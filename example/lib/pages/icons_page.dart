@@ -107,7 +107,7 @@ class _IconsPageState extends State<IconsPage> {
                   children: [
                     SelectableText('All available icons'),
                     Spacer(),
-                    BootstrapLabel(
+                    BootstrapLabelText(
                       bottomPadding: 0,
                       child: Text('Search Count: '),
                     ),

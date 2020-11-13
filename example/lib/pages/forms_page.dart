@@ -41,7 +41,7 @@ class FormsPage extends StatelessWidget {
                         children: [
                           BootstrapFormGroup(
                             children: [
-                              BootstrapLabel(
+                              BootstrapLabelText(
                                 child: SelectableText('Text Input'),
                               ),
                               TextFormField(
@@ -54,7 +54,7 @@ class FormsPage extends StatelessWidget {
                           ),
                           BootstrapFormGroup(
                             children: [
-                              BootstrapLabel(
+                              BootstrapLabelText(
                                 child: SelectableText(
                                     'Text Input with Placeholder'),
                               ),
@@ -67,7 +67,7 @@ class FormsPage extends StatelessWidget {
                           ),
                           BootstrapFormGroup(
                             children: [
-                              BootstrapLabel(
+                              BootstrapLabelText(
                                 child: SelectableText('Static Control'),
                               ),
                               BootstrapParagraphs(
@@ -77,7 +77,7 @@ class FormsPage extends StatelessWidget {
                           ),
                           BootstrapFormGroup(
                             children: [
-                              BootstrapLabel(
+                              BootstrapLabelText(
                                 child: SelectableText('Text area'),
                               ),
                               TextFormField(
@@ -88,7 +88,7 @@ class FormsPage extends StatelessWidget {
                           ),
                           BootstrapFormGroup(
                             children: [
-                              BootstrapLabel(
+                              BootstrapLabelText(
                                 child: SelectableText('Checkboxes'),
                               ),
                               BootstrapCheckbox(
@@ -114,7 +114,7 @@ class FormsPage extends StatelessWidget {
                           BootstrapFormGroup(
                             direction: Axis.horizontal,
                             children: [
-                              BootstrapLabel(
+                              BootstrapLabelText(
                                 child: SelectableText('Inline Checkboxes'),
                               ),
                               BootstrapCheckbox(
@@ -139,7 +139,7 @@ class FormsPage extends StatelessWidget {
                           ),
                           BootstrapFormGroup(
                             children: [
-                              BootstrapLabel(
+                              BootstrapLabelText(
                                 child: SelectableText('Radio Buttons'),
                               ),
                               BootstrapRadio(
@@ -171,7 +171,7 @@ class FormsPage extends StatelessWidget {
                           BootstrapFormGroup(
                             direction: Axis.horizontal,
                             children: [
-                              BootstrapLabel(
+                              BootstrapLabelText(
                                 child: SelectableText('Inline Radio Buttons'),
                               ),
                               BootstrapRadio(
@@ -202,7 +202,7 @@ class FormsPage extends StatelessWidget {
                           ),
                           BootstrapFormGroup(
                             children: [
-                              BootstrapLabel(
+                              BootstrapLabelText(
                                 child: SelectableText('Selects'),
                               ),
                               BootstrapSelect(
@@ -222,7 +222,7 @@ class FormsPage extends StatelessWidget {
                           ),
                           BootstrapFormGroup(
                             children: [
-                              BootstrapLabel(
+                              BootstrapLabelText(
                                 child: SelectableText('Multiple Selects'),
                               ),
                               BootstrapMultiSelect(
@@ -258,7 +258,7 @@ class FormsPage extends StatelessWidget {
                           ),
                           BootstrapFormGroup(
                             children: [
-                              BootstrapLabel(
+                              BootstrapLabelText(
                                 child: SelectableText('Disabled Input'),
                               ),
                               TextFormField(
@@ -272,7 +272,7 @@ class FormsPage extends StatelessWidget {
                           ),
                           BootstrapFormGroup(
                             children: [
-                              BootstrapLabel(
+                              BootstrapLabelText(
                                 child: SelectableText('Disabled select menu'),
                               ),
                               BootstrapSelect(
@@ -314,7 +314,7 @@ class FormsPage extends StatelessWidget {
                           BootstrapFormGroup(
                             type: BootstrapFormGroupType.success,
                             children: [
-                              BootstrapLabel(
+                              BootstrapLabelText(
                                 child: SelectableText('Input with success'),
                               ),
                               TextFormField(
@@ -325,7 +325,7 @@ class FormsPage extends StatelessWidget {
                           BootstrapFormGroup(
                             type: BootstrapFormGroupType.warning,
                             children: [
-                              BootstrapLabel(
+                              BootstrapLabelText(
                                 child: SelectableText('Input with warning'),
                               ),
                               TextFormField(
@@ -336,7 +336,7 @@ class FormsPage extends StatelessWidget {
                           BootstrapFormGroup(
                             type: BootstrapFormGroupType.error,
                             children: [
-                              BootstrapLabel(
+                              BootstrapLabelText(
                                 child: SelectableText('Input with error'),
                               ),
                               TextFormField(

@@ -9,7 +9,7 @@ export 'components/bootstrap_device_mode.dart';
 export 'components/bootstrap_form_group.dart';
 export 'components/bootstrap_heading.dart';
 export 'components/bootstrap_input_decoration.dart';
-export 'components/bootstrap_label.dart';
+export 'components/bootstrap_label_text.dart';
 export 'components/bootstrap_list.dart';
 export 'components/bootstrap_modal.dart';
 export 'components/bootstrap_panel.dart';
