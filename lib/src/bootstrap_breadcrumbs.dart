@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bootstrap_widgets/components/bootstrap_colors.dart';
+
+import 'bootstrap_colors.dart';
 
 class BootstrapBreadcrumbs extends StatelessWidget {
   const BootstrapBreadcrumbs({

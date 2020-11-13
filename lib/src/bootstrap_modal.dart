@@ -32,7 +32,7 @@ class _BootstrapModalState extends State<BootstrapModal> {
     final mediaQuery = MediaQuery.of(context);
     setState(() {
       final deviceMode =
-          BootstrapDeviceModeHelper.getDeviceMode(mediaQuery.size.width);
+          BootstrapDeviceModeHelper.valueOf(mediaQuery.size.width);
       switch (widget.size) {
         case BootstrapModalSize.large:
           _width = deviceMode == BootstrapDeviceMode.pc

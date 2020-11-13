@@ -1,8 +1,15 @@
-class BootstrapDeviceModeHelper {
+
+enum BootstrapDeviceMode {
+  pc,
+  tablet,
+  mobile,
+}
+
+extension BootstrapDeviceModeHelper on BootstrapDeviceMode {
   static const tabletThreshold = 992.0;
   static const mobileThreshold = 768.0;
 
-  static BootstrapDeviceMode getDeviceMode(double width) {
+  static BootstrapDeviceMode valueOf(double width) {
     if (tabletThreshold <= width) {
       return BootstrapDeviceMode.pc;
     }
@@ -11,10 +18,4 @@ class BootstrapDeviceModeHelper {
     }
     return BootstrapDeviceMode.mobile;
   }
-}
-
-enum BootstrapDeviceMode {
-  pc,
-  tablet,
-  mobile,
 }
