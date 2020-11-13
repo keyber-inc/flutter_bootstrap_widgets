@@ -1,4 +1,4 @@
-## 0.0.5 - November 13, 2020
+## 0.0.5+1 - November 13, 2020
 
 - Add margin, fontSize and iconSize params to BootstrapBreadcrumbs
 - Rename BootstrapLabel class to BootstrapLabelText class
