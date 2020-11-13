@@ -34,6 +34,9 @@ class BreadcrumbsPage extends StatelessWidget {
                 body: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
+                    BootstrapLabel(
+                      child: Text("Default"),
+                    ),
                     BootstrapBreadcrumbs(
                       children: [
                         BootstrapBreadcrumbsItem(
@@ -53,6 +56,9 @@ class BreadcrumbsPage extends StatelessWidget {
                           active: true,
                         ),
                       ],
+                    ),
+                    BootstrapLabel(
+                      child: Text("With Icon"),
                     ),
                     BootstrapBreadcrumbs(
                       children: [
@@ -75,6 +81,9 @@ class BreadcrumbsPage extends StatelessWidget {
                         ),
                       ],
                     ),
+                    BootstrapLabel(
+                      child: Text("No Actions"),
+                    ),
                     BootstrapBreadcrumbs(
                       children: [
                         BootstrapBreadcrumbsItem(
@@ -88,6 +97,10 @@ class BreadcrumbsPage extends StatelessWidget {
                           text: 'Breadcrumbs',
                         ),
                       ],
+                    ),
+                    BootstrapLabel(
+                      child: Text(
+                          "White backgroundColor, zero margin and padding"),
                     ),
                     Container(
                       child: BootstrapBreadcrumbs(
@@ -95,6 +108,7 @@ class BreadcrumbsPage extends StatelessWidget {
                           color: Colors.white,
                         ),
                         padding: const EdgeInsets.all(0),
+                        margin: const EdgeInsets.all(0),
                         children: [
                           BootstrapBreadcrumbsItem(
                             text: 'Bootstrap3',
@@ -116,9 +130,40 @@ class BreadcrumbsPage extends StatelessWidget {
                         ],
                       ),
                     ),
+                    BootstrapLabel(
+                      child: Text("Expanded"),
+                    ),
                     Container(
                       width: double.infinity,
                       child: BootstrapBreadcrumbs(
+                        children: [
+                          BootstrapBreadcrumbsItem(
+                            text: 'Bootstrap3',
+                            icon: Icons.home,
+                            onTap: () {
+                              print('onTap()');
+                            },
+                          ),
+                          BootstrapBreadcrumbsItem(
+                            text: 'Component',
+                            onTap: () {
+                              print('onTap()');
+                            },
+                          ),
+                          BootstrapBreadcrumbsItem(
+                            text: 'Breadcrumbs',
+                            active: true,
+                          ),
+                        ],
+                      ),
+                    ),
+                    BootstrapLabel(
+                      child: Text("Large"),
+                    ),
+                    Container(
+                      child: BootstrapBreadcrumbs(
+                        iconSize: 24,
+                        fontSize: 20,
                         children: [
                           BootstrapBreadcrumbsItem(
                             text: 'Bootstrap3',

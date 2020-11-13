@@ -9,11 +9,17 @@ class BootstrapBreadcrumbs extends StatelessWidget {
       borderRadius: BorderRadius.all(Radius.circular(4)),
     ),
     this.padding = const EdgeInsets.symmetric(vertical: 8, horizontal: 15),
+    this.margin = const EdgeInsets.only(bottom: 20),
+    this.fontSize = 14,
+    this.iconSize = 17,
   });
 
   final List<BootstrapBreadcrumbsItem> children;
   final Decoration decoration;
   final EdgeInsetsGeometry padding;
+  final EdgeInsetsGeometry margin;
+  final double fontSize;
+  final double iconSize;
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +31,7 @@ class BootstrapBreadcrumbs extends StatelessWidget {
       }
     }
     return Padding(
-      padding: const EdgeInsets.only(bottom: 20),
+      padding: margin,
       child: Container(
         decoration: decoration,
         padding: padding,
@@ -50,7 +56,7 @@ class BootstrapBreadcrumbs extends StatelessWidget {
           item.icon != null
               ? Icon(
                   item.icon,
-                  size: 17,
+                  size: iconSize,
                   color: color,
                 )
               : SizedBox(),
@@ -58,6 +64,7 @@ class BootstrapBreadcrumbs extends StatelessWidget {
             item.text,
             style: TextStyle(
               color: color,
+              fontSize: fontSize,
             ),
           ),
         ],
