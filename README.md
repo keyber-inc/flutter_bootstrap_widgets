@@ -21,6 +21,7 @@ Support widgets
   - button
 - Components
   - breadcrumbs
+  - label
   - alert
   - modal
   - panel
