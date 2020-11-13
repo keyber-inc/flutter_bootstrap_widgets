@@ -105,6 +105,7 @@ class FormsPage extends StatelessWidget {
                               ),
                               BootstrapCheckbox(
                                 label: Text('Checkbox 3'),
+                                value: true,
                                 onChanged: (value) {
                                   print('Checkbox 3: $value');
                                 },
@@ -131,6 +132,7 @@ class FormsPage extends StatelessWidget {
                               ),
                               BootstrapCheckbox(
                                 label: Text('3'),
+                                value: true,
                                 onChanged: (value) {
                                   print('Checkbox 3: $value');
                                 },
