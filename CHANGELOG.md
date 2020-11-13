@@ -1,3 +1,11 @@
+## 0.0.5 - November 13, 2020
+
+- Add margin, fontSize and iconSize params to BootstrapBreadcrumbs
+- Rename BootstrapLabel class to BootstrapLabelText class
+- Add BootstrapLabel class
+- BootstrapCheckbox class changed StatelessWidget
+- Organizing a library package
+
 ## 0.0.4+1 - November 9, 2020
 
 - Add borderColor param to BootstrapHeading
