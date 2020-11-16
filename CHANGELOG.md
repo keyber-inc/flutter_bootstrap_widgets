@@ -1,3 +1,8 @@
+## 0.0.6 - November 16, 2020
+
+- Delete BootstrapDataTable
+- Rename package name
+
 ## 0.0.5+1 - November 13, 2020
 
 - Add margin, fontSize and iconSize params to BootstrapBreadcrumbs
