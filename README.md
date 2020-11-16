@@ -11,7 +11,6 @@ Support widgets
   - p
   - ul/li
   - ol/li
-  - table (data table)
   - input text
   - textarea
   - input checkbox

@@ -10,7 +10,6 @@ import 'package:flutter_bootstrap_widgets_example/pages/icons_page.dart';
 import 'package:flutter_bootstrap_widgets_example/pages/labels_page.dart';
 import 'package:flutter_bootstrap_widgets_example/pages/modals_page.dart';
 import 'package:flutter_bootstrap_widgets_example/pages/panels_page.dart';
-import 'package:flutter_bootstrap_widgets_example/pages/tables_page.dart';
 import 'package:flutter_bootstrap_widgets_example/pages/top_page.dart';
 import 'package:flutter_bootstrap_widgets_example/pages/typography_page.dart';
 
@@ -37,10 +36,6 @@ class DefaultLayout extends StatelessWidget {
         MenuItemData(
           title: TypographyPage.title,
           route: TypographyPage.route,
-        ),
-        MenuItemData(
-          title: TablesPage.title,
-          route: TablesPage.route,
         ),
         MenuItemData(
           title: FormsPage.title,
