@@ -4,7 +4,6 @@ export 'src/bootstrap_button.dart';
 export 'src/bootstrap_checkbox.dart';
 export 'src/bootstrap_code_text_span.dart';
 export 'src/bootstrap_colors.dart';
-export 'src/bootstrap_data_table.dart';
 export 'src/bootstrap_form_group.dart';
 export 'src/bootstrap_heading.dart';
 export 'src/bootstrap_input_decoration.dart';

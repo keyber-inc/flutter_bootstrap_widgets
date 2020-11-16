@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bootstrap/flutter_bootstrap.dart';
-import 'package:flutter_bootstrap_widgets/flutter_bootstrap_widgets.dart';
+import 'package:flutter_bootstrap_widgets/bootstrap_widgets.dart';
 import 'package:flutter_bootstrap_widgets_example/default_layout.dart';
 
 class ModalsPage extends StatelessWidget {
