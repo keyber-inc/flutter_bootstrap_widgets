@@ -9,12 +9,14 @@ class BootstrapPanel extends StatelessWidget {
     this.header,
     this.body,
     this.footer,
+    this.paddiing = const EdgeInsets.all(16.0),
   }) : super(key: key);
 
   final BootstrapPanelType type;
   final Widget header;
   final Widget body;
   final Widget footer;
+  final EdgeInsetsGeometry paddiing;
 
   final Map<BootstrapPanelType, Color> _textColor = const {
     BootstrapPanelType.defaults: BootstrapColors.panelDefaultText,
@@ -93,7 +95,7 @@ class BootstrapPanel extends StatelessWidget {
             if (body != null)
               Container(
                 color: BootstrapColors.bodyBackground,
-                padding: const EdgeInsets.all(16.0),
+                padding: paddiing,
                 width: double.infinity,
                 child: body,
               ),

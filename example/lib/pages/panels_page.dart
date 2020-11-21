@@ -143,30 +143,13 @@ class PanelsPage extends StatelessWidget {
             BootstrapCol(
               sizes: 'col-xl-12',
               child: BootstrapPanel(
-                header: SelectableText('Collapsible Accordion Panel Group'),
+                header: SelectableText('Body Padding'),
                 body: Column(
                   children: [
                     BootstrapPanel(
+                      paddiing: const EdgeInsets.all(0),
                       header: SelectableText(
-                        'Collapsible Group Item #1',
-                        style: TextStyle(fontWeight: FontWeight.bold),
-                      ),
-                      body: SelectableText(
-                        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et, fringilla augue.',
-                      ),
-                    ),
-                    BootstrapPanel(
-                      header: SelectableText(
-                        'Collapsible Group Item #2',
-                        style: TextStyle(fontWeight: FontWeight.bold),
-                      ),
-                      body: SelectableText(
-                        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et, fringilla augue.',
-                      ),
-                    ),
-                    BootstrapPanel(
-                      header: SelectableText(
-                        'Collapsible Group Item #3',
+                        'none',
                         style: TextStyle(fontWeight: FontWeight.bold),
                       ),
                       body: SelectableText(
