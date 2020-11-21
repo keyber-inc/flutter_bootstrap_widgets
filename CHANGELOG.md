@@ -1,3 +1,8 @@
+## 0.0.7 - November 21, 2020
+
+- Add padding parameter at BootstrapPanel class
+- Fix BootstrapLabel class
+
 ## 0.0.6 - November 16, 2020
 
 - Delete BootstrapDataTable
