@@ -42,15 +42,18 @@ class BootstrapLabel extends StatelessWidget {
           color: textColor,
           fontWeight: FontWeight.bold,
           fontSize: fontSize,
+          height: 1.5,
         ),
       ),
     );
   }
 
   double get _borderRadius => max(fontSize * 0.2, 2.0);
-  EdgeInsetsGeometry get padding => EdgeInsets.symmetric(
-        horizontal: min(fontSize * 0.4, 20),
-        vertical: min(fontSize * 0.2, 5),
+  EdgeInsetsGeometry get padding => EdgeInsets.only(
+        left: min(fontSize * 0.4, 20),
+        right: min(fontSize * 0.4, 20),
+        top: min(fontSize * 0.2, 5),
+        bottom: min(fontSize * 0.2, 6),
       );
 }
 
