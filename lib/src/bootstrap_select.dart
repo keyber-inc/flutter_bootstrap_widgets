@@ -4,8 +4,8 @@ import 'bootstrap_colors.dart';
 
 class BootstrapSelect extends StatefulWidget {
   const BootstrapSelect({
-    @required this.options,
-    @required this.onChanged,
+    required this.options,
+    required this.onChanged,
     this.value,
     this.isExpanded = true,
     this.enabled = true,
@@ -49,7 +49,7 @@ class _BootstrapSelectState extends State<BootstrapSelect> {
           padding:
               const EdgeInsets.only(left: 20, top: 5, right: 10, bottom: 5),
           child: DropdownButtonHideUnderline(
-            child: DropdownButton(
+            child: DropdownButton<dynamic>(
               value: _value,
               icon: Icon(Icons.keyboard_arrow_down),
               iconSize: 20,
@@ -84,8 +84,8 @@ class _BootstrapSelectState extends State<BootstrapSelect> {
 
 class BootstrapMultiSelect extends StatefulWidget {
   const BootstrapMultiSelect({
-    @required this.options,
-    @required this.onChanged,
+    required this.options,
+    required this.onChanged,
     this.values = const [],
     this.height = 94,
   });
@@ -150,13 +150,11 @@ class _BootstrapMultiSelectState extends State<BootstrapMultiSelect> {
                       return a - b;
                     });
 
-                    if (widget.onChanged != null) {
-                      List<dynamic> values = [];
-                      _selectedIndexes.forEach((index) {
-                        values.add(widget.options[index].value);
-                      });
-                      widget.onChanged(values);
-                    }
+                    List<dynamic> values = [];
+                    _selectedIndexes.forEach((index) {
+                      values.add(widget.options[index].value);
+                    });
+                    widget.onChanged(values);
                   });
                 },
                 child: Padding(
@@ -181,8 +179,8 @@ class _BootstrapMultiSelectState extends State<BootstrapMultiSelect> {
 
 class BootstrapOption {
   const BootstrapOption({
-    @required this.name,
-    @required this.value,
+    required this.name,
+    required this.value,
   });
 
   final String name;

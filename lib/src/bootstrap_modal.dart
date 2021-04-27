@@ -5,7 +5,7 @@ import 'bootstrap_device_mode.dart';
 
 class BootstrapModal extends StatefulWidget {
   const BootstrapModal({
-    Key key,
+    Key? key,
     this.title,
     this.content,
     this.actions,
@@ -13,9 +13,9 @@ class BootstrapModal extends StatefulWidget {
     this.size = BootstrapModalSize.medium,
   }) : super(key: key);
 
-  final Widget title;
-  final Widget content;
-  final List<Widget> actions;
+  final Widget? title;
+  final Widget? content;
+  final List<Widget>? actions;
   final bool dismissble;
   final BootstrapModalSize size;
 
@@ -24,7 +24,7 @@ class BootstrapModal extends StatefulWidget {
 }
 
 class _BootstrapModalState extends State<BootstrapModal> {
-  double _width;
+  late double _width;
 
   @override
   void didChangeDependencies() {
@@ -84,7 +84,7 @@ class _BootstrapModalState extends State<BootstrapModal> {
                 ),
                 child: Row(
                   children: [
-                    widget.title,
+                    widget.title ?? SizedBox(),
                     Spacer(),
                     widget.dismissble ? _buildCloseButton(context) : SizedBox(),
                   ],

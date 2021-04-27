@@ -4,19 +4,19 @@ import 'bootstrap_colors.dart';
 
 class BootstrapPanel extends StatelessWidget {
   const BootstrapPanel({
-    Key key,
+    Key? key,
     this.type = BootstrapPanelType.defaults,
     this.header,
     this.body,
     this.footer,
-    this.paddiing = const EdgeInsets.all(16.0),
+    this.padding = const EdgeInsets.all(16.0),
   }) : super(key: key);
 
   final BootstrapPanelType type;
-  final Widget header;
-  final Widget body;
-  final Widget footer;
-  final EdgeInsetsGeometry paddiing;
+  final Widget? header;
+  final Widget? body;
+  final Widget? footer;
+  final EdgeInsetsGeometry padding;
 
   final Map<BootstrapPanelType, Color> _textColor = const {
     BootstrapPanelType.defaults: BootstrapColors.panelDefaultText,
@@ -63,7 +63,7 @@ class BootstrapPanel extends StatelessWidget {
         shadowColor: Colors.transparent,
         shape: RoundedRectangleBorder(
           side: BorderSide(
-            color: _borderColor[type],
+            color: _borderColor[type]!,
             width: 1.0,
           ),
           borderRadius: BorderRadius.circular(3.0),
@@ -89,13 +89,13 @@ class BootstrapPanel extends StatelessWidget {
                   style: TextStyle(
                     color: _textColor[type],
                   ),
-                  child: header,
+                  child: header ?? SizedBox(),
                 ),
               ),
             if (body != null)
               Container(
                 color: BootstrapColors.bodyBackground,
-                padding: paddiing,
+                padding: padding,
                 width: double.infinity,
                 child: body,
               ),
@@ -117,7 +117,7 @@ class BootstrapPanel extends StatelessWidget {
                   style: TextStyle(
                     color: BootstrapColors.grayDark,
                   ),
-                  child: footer,
+                  child: footer ?? SizedBox(),
                 ),
               ),
           ],

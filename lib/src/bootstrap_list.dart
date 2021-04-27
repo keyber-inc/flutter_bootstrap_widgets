@@ -2,15 +2,15 @@ import 'package:flutter/material.dart';
 
 class BootstrapList extends StatelessWidget {
   const BootstrapList.unordered({
-    this.children,
+    required this.children,
   }) : type = BootstrapListType.unordered;
 
   const BootstrapList.ordered({
-    this.children,
+    required this.children,
   }) : type = BootstrapListType.ordered;
 
   const BootstrapList.unstyled({
-    this.children,
+    required this.children,
   }) : type = BootstrapListType.unstyled;
 
   final List<BootstrapListItem> children;
@@ -40,7 +40,7 @@ enum BootstrapListType {
 // ignore: must_be_immutable
 class BootstrapListItem extends StatelessWidget {
   BootstrapListItem({
-    @required this.child,
+    required this.child,
   });
 
   final Widget child;
@@ -58,7 +58,7 @@ class BootstrapListItem extends StatelessWidget {
   }
 
   Widget _buildBullet(BootstrapListType type, int index) {
-    Widget bullet;
+    Widget? bullet;
     switch (type) {
       case BootstrapListType.unordered:
         bullet = _buildBulletBlack();

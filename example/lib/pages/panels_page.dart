@@ -147,7 +147,7 @@ class PanelsPage extends StatelessWidget {
                 body: Column(
                   children: [
                     BootstrapPanel(
-                      paddiing: const EdgeInsets.all(0),
+                      padding: const EdgeInsets.all(0),
                       header: SelectableText(
                         'none',
                         style: TextStyle(fontWeight: FontWeight.bold),

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class BootstrapParagraphs extends StatelessWidget {
   const BootstrapParagraphs({
-    @required this.child,
+    required this.child,
     this.lead = false,
   });
 

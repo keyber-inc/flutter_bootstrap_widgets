@@ -6,7 +6,7 @@ import 'bootstrap_colors.dart';
 
 class BootstrapLabel extends StatelessWidget {
   const BootstrapLabel({
-    Key key,
+    Key? key,
     this.type = BootstrapLabelType.defaults,
     this.text = '',
     this.fontSize = 10,

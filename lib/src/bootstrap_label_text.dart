@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class BootstrapLabelText extends StatelessWidget {
   const BootstrapLabelText({
-    this.child,
+    required this.child,
     this.bottomPadding = 5.0,
   });
 

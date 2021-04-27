@@ -10,7 +10,7 @@ class BootstrapCheckbox extends StatelessWidget {
     this.enabled = true,
   });
 
-  final Function(bool) onChanged;
+  final Function(bool)? onChanged;
   final bool value;
   final Widget label;
   final bool enabled;
@@ -21,7 +21,7 @@ class BootstrapCheckbox extends StatelessWidget {
       onTap: enabled
           ? () {
               if (onChanged != null) {
-                onChanged(!value);
+                onChanged!(!value);
               }
             }
           : null,
@@ -31,8 +31,8 @@ class BootstrapCheckbox extends StatelessWidget {
             value: value,
             onChanged: enabled
                 ? (value) {
-                    if (onChanged != null) {
-                      onChanged(value);
+                    if (onChanged != null && value != null) {
+                      onChanged!(value);
                     }
                   }
                 : null,

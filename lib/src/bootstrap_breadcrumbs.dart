@@ -4,7 +4,7 @@ import 'bootstrap_colors.dart';
 
 class BootstrapBreadcrumbs extends StatelessWidget {
   const BootstrapBreadcrumbs({
-    @required this.children,
+    required this.children,
     this.decoration = const BoxDecoration(
       color: BootstrapColors.defaults,
       borderRadius: BorderRadius.all(Radius.circular(4)),
@@ -88,7 +88,7 @@ class BootstrapBreadcrumbs extends StatelessWidget {
 
 class BootstrapBreadcrumbsItem {
   const BootstrapBreadcrumbsItem({
-    @required this.text,
+    required this.text,
     this.icon,
     this.onTap,
     this.active = false,
@@ -96,6 +96,6 @@ class BootstrapBreadcrumbsItem {
 
   final String text;
   final bool active;
-  final VoidCallback onTap;
-  final IconData icon;
+  final VoidCallback? onTap;
+  final IconData? icon;
 }

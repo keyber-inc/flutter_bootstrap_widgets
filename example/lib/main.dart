@@ -70,8 +70,8 @@ class App extends StatelessWidget {
     );
   }
 
-  Widget _getPageWidget(RouteSettings settings) {
-    final uri = Uri.parse(settings.name);
+  Widget? _getPageWidget(RouteSettings settings) {
+    final uri = Uri.parse(settings.name!);
     switch (uri.path) {
       case TopPage.route:
         return TopPage();

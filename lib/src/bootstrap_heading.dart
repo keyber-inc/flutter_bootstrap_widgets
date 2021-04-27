@@ -4,8 +4,8 @@ import 'bootstrap_colors.dart';
 
 class BootstrapHeading extends StatelessWidget {
   const BootstrapHeading.h1({
-    Key key,
-    @required this.child,
+    Key? key,
+    required this.child,
     this.type = BootstrapHeadingType.none,
     this.marginTop = 20,
     this.marginBottom = 10,
@@ -13,8 +13,8 @@ class BootstrapHeading extends StatelessWidget {
   }) : _fontSize = 36;
 
   const BootstrapHeading.h2({
-    Key key,
-    @required this.child,
+    Key? key,
+    required this.child,
     this.type = BootstrapHeadingType.none,
     this.marginTop = 20,
     this.marginBottom = 10,
@@ -22,8 +22,8 @@ class BootstrapHeading extends StatelessWidget {
   }) : _fontSize = 30;
 
   const BootstrapHeading.h3({
-    Key key,
-    @required this.child,
+    Key? key,
+    required this.child,
     this.type = BootstrapHeadingType.none,
     this.marginTop = 20,
     this.marginBottom = 10,
@@ -31,8 +31,8 @@ class BootstrapHeading extends StatelessWidget {
   }) : _fontSize = 24;
 
   const BootstrapHeading.h4({
-    Key key,
-    @required this.child,
+    Key? key,
+    required this.child,
     this.type = BootstrapHeadingType.none,
     this.marginTop = 10,
     this.marginBottom = 10,
@@ -40,8 +40,8 @@ class BootstrapHeading extends StatelessWidget {
   }) : _fontSize = 18;
 
   const BootstrapHeading.h5({
-    Key key,
-    @required this.child,
+    Key? key,
+    required this.child,
     this.type = BootstrapHeadingType.none,
     this.marginTop = 10,
     this.marginBottom = 10,
@@ -49,8 +49,8 @@ class BootstrapHeading extends StatelessWidget {
   }) : _fontSize = 14;
 
   const BootstrapHeading.h6({
-    Key key,
-    @required this.child,
+    Key? key,
+    required this.child,
     this.type = BootstrapHeadingType.none,
     this.marginTop = 10,
     this.marginBottom = 10,

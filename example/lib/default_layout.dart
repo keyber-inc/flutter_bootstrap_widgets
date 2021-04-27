@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_admin_scaffold/flutter_admin_scaffold.dart';
+import 'package:flutter_admin_scaffold/admin_scaffold.dart';
 import 'package:flutter_bootstrap/flutter_bootstrap.dart';
 import 'package:flutter_bootstrap_widgets/bootstrap_widgets.dart';
 import 'package:flutter_bootstrap_widgets_example/pages/alerts_page.dart';
@@ -15,63 +15,63 @@ import 'package:flutter_bootstrap_widgets_example/pages/typography_page.dart';
 
 class DefaultLayout extends StatelessWidget {
   const DefaultLayout({
-    Key key,
-    @required this.route,
-    @required this.children,
+    Key? key,
+    required this.route,
+    required this.children,
   }) : super(key: key);
 
   final List<Widget> children;
   final String route;
 
-  final List<MenuItemData> _sidebarItemDatas = const [
-    MenuItemData(
+  final List<MenuItem> _sidebarItemDatas = const [
+    MenuItem(
       title: TopPage.title,
       route: TopPage.route,
       icon: Icons.dashboard,
     ),
-    MenuItemData(
+    MenuItem(
       title: 'CSS',
       icon: Icons.edit,
       children: [
-        MenuItemData(
+        MenuItem(
           title: TypographyPage.title,
           route: TypographyPage.route,
         ),
-        MenuItemData(
+        MenuItem(
           title: FormsPage.title,
           route: FormsPage.route,
         ),
-        MenuItemData(
+        MenuItem(
           title: ButtonsPage.title,
           route: ButtonsPage.route,
         ),
       ],
     ),
-    MenuItemData(
+    MenuItem(
       title: 'Components',
       icon: Icons.settings,
       children: [
-        MenuItemData(
+        MenuItem(
           title: IconsPage.title,
           route: IconsPage.route,
         ),
-        MenuItemData(
+        MenuItem(
           title: BreadcrumbsPage.title,
           route: BreadcrumbsPage.route,
         ),
-        MenuItemData(
+        MenuItem(
           title: LabelsPage.title,
           route: LabelsPage.route,
         ),
-        MenuItemData(
+        MenuItem(
           title: AlertsPage.title,
           route: AlertsPage.route,
         ),
-        MenuItemData(
+        MenuItem(
           title: ModalsPage.title,
           route: ModalsPage.route,
         ),
-        MenuItemData(
+        MenuItem(
           title: PanelsPage.title,
           route: PanelsPage.route,
         ),
@@ -86,14 +86,14 @@ class DefaultLayout extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Sample'),
       ),
-      sidebar: Sidebar(
-        itemDatas: _sidebarItemDatas,
+      sideBar: SideBar(
+        items: _sidebarItemDatas,
         selectedRoute: route,
         onSelected: (itemData) {
           print(
               'sidebar: onTap(): title = ${itemData.title}, route = ${itemData.route}');
           if (itemData.route != null && itemData.route != route) {
-            Navigator.of(context).pushNamed(itemData.route);
+            Navigator.of(context).pushNamed(itemData.route!);
           }
         },
       ),

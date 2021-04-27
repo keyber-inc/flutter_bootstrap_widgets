@@ -4,14 +4,14 @@ import 'bootstrap_colors.dart';
 
 class BootstrapFormGroup extends StatelessWidget {
   const BootstrapFormGroup({
-    this.children,
+    required this.children,
     this.direction = Axis.vertical,
     this.type,
   });
 
   final List<Widget> children;
   final Axis direction;
-  final BootstrapFormGroupType type;
+  final BootstrapFormGroupType? type;
 
   final Map<BootstrapFormGroupType, Color> _textColor = const {
     BootstrapFormGroupType.success: BootstrapColors.alertSuccessText,

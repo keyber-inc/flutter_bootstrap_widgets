@@ -10,7 +10,7 @@ class BootstrapRadio extends StatelessWidget {
     this.label = const SizedBox(),
   });
 
-  final Function(dynamic) onChanged;
+  final Function(dynamic)? onChanged;
   final dynamic groupValue;
   final dynamic value;
   final Widget label;
@@ -19,7 +19,9 @@ class BootstrapRadio extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        onChanged(value);
+        if (onChanged != null) {
+          onChanged!(value);
+        }
       },
       child: Row(
         children: [

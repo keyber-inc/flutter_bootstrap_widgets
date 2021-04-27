@@ -16,8 +16,8 @@ class IconsPage extends StatefulWidget {
 class _IconsPageState extends State<IconsPage> {
   String _searchText = '';
   bool _willSearch = true;
-  Timer _timer;
-  int _inputedTick;
+  Timer? _timer;
+  int? _inputedTick;
   List<Map<String, dynamic>> _resultIconInfos = [];
   int _searchMaxCount = 100;
 
@@ -26,7 +26,7 @@ class _IconsPageState extends State<IconsPage> {
     super.initState();
     _timer = Timer.periodic(Duration(seconds: 1), (timer) {
       if (!_willSearch) {
-        if (_inputedTick != null && timer.tick > _inputedTick) {
+        if (_inputedTick != null && timer.tick > _inputedTick!) {
           _willSearch = true;
         }
       }
@@ -45,7 +45,7 @@ class _IconsPageState extends State<IconsPage> {
   @override
   void dispose() {
     super.dispose();
-    _timer.cancel();
+    _timer?.cancel();
     _timer = null;
   }
 
@@ -56,7 +56,7 @@ class _IconsPageState extends State<IconsPage> {
 
     _searchText = text;
     _willSearch = false;
-    _inputedTick = _timer.tick;
+    _inputedTick = _timer?.tick;
   }
 
   void _onChangedSearchMaxCount(dynamic max) {

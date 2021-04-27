@@ -5,7 +5,7 @@ import 'bootstrap_colors.dart';
 class BootstrapAlert extends StatefulWidget {
   const BootstrapAlert({
     this.type = BootstrapAlertType.defaults,
-    this.child,
+    required this.child,
     this.dismissble = false,
   });
 
@@ -57,7 +57,7 @@ class _BootstrapAlertState extends State<BootstrapAlert> {
             shadowColor: Colors.transparent,
             shape: RoundedRectangleBorder(
               side: BorderSide(
-                color: _borderColor[widget.type],
+                color: _borderColor[widget.type]!,
                 width: 1.0,
               ),
               borderRadius: BorderRadius.circular(4.0),

@@ -4,7 +4,7 @@ import 'bootstrap_colors.dart';
 
 class BootstrapCodeTextSpan extends WidgetSpan {
   BootstrapCodeTextSpan({
-    String text,
+    required String text,
   }) : super(
           baseline: TextBaseline.alphabetic,
           alignment: PlaceholderAlignment.baseline,
