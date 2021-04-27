@@ -1,3 +1,7 @@
+## 1.0.0 - April 27, 2021
+
+- support null-safety
+
 ## 0.0.7 - November 21, 2020
 
 - Add padding parameter at BootstrapPanel class
