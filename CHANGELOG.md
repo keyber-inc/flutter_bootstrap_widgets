@@ -1,3 +1,9 @@
+## 1.1.0 - February 16, 2022
+
+- Performance improvements
+- Fix BootstrapSelect (StatefulWidget => StatelessWidget)
+- Add any parameters at BootstrapButton class
+
 ## 1.0.0 - April 27, 2021
 
 - support null-safety
