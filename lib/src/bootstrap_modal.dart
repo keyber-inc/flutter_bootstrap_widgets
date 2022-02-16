@@ -25,6 +25,50 @@ class BootstrapModal extends StatefulWidget {
 
 class _BootstrapModalState extends State<BootstrapModal> {
   late double _width;
+  Widget? _title;
+
+  @override
+  void initState() {
+    super.initState();
+    _title = widget.title != null
+        ? Container(
+            decoration: const BoxDecoration(
+              border: Border(
+                bottom: BorderSide(
+                  color: BootstrapColors.modalDefaultBorder,
+                  width: 1.0,
+                ),
+              ),
+            ),
+            padding: const EdgeInsets.all(15),
+            child: DefaultTextStyle.merge(
+              style: const TextStyle(
+                color: BootstrapColors.grayDark,
+              ),
+              child: Row(
+                children: [
+                  widget.title!,
+                  const Spacer(),
+                  widget.dismissble
+                      ? Opacity(
+                          opacity: 0.2,
+                          child: IconButton(
+                            icon: const Icon(Icons.close_sharp),
+                            iconSize: 18,
+                            padding: const EdgeInsets.all(0),
+                            constraints: const BoxConstraints(),
+                            onPressed: () {
+                              Navigator.of(context).pop();
+                            },
+                          ),
+                        )
+                      : const SizedBox(),
+                ],
+              ),
+            ),
+          )
+        : null;
+  }
 
   @override
   void didChangeDependencies() {
@@ -67,35 +111,11 @@ class _BootstrapModalState extends State<BootstrapModal> {
       contentPadding: EdgeInsets.zero,
       actionsPadding:
           const EdgeInsets.only(left: 15, top: 10, right: 15, bottom: 10),
-      title: widget.title != null
-          ? Container(
-              decoration: BoxDecoration(
-                border: Border(
-                  bottom: BorderSide(
-                    color: BootstrapColors.modalDefaultBorder,
-                    width: 1.0,
-                  ),
-                ),
-              ),
-              padding: const EdgeInsets.all(15),
-              child: DefaultTextStyle.merge(
-                style: TextStyle(
-                  color: BootstrapColors.grayDark,
-                ),
-                child: Row(
-                  children: [
-                    widget.title ?? SizedBox(),
-                    Spacer(),
-                    widget.dismissble ? _buildCloseButton(context) : SizedBox(),
-                  ],
-                ),
-              ),
-            )
-          : null,
+      title: _title,
       content: widget.content != null
           ? Container(
               width: _width,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 border: Border(
                   bottom: BorderSide(
                     color: BootstrapColors.modalDefaultBorder,
@@ -108,21 +128,6 @@ class _BootstrapModalState extends State<BootstrapModal> {
             )
           : null,
       actions: widget.actions,
-    );
-  }
-
-  Widget _buildCloseButton(BuildContext context) {
-    return Opacity(
-      opacity: 0.2,
-      child: IconButton(
-        icon: Icon(Icons.close_sharp),
-        iconSize: 18,
-        padding: const EdgeInsets.all(0),
-        constraints: BoxConstraints(),
-        onPressed: () {
-          Navigator.of(context).pop();
-        },
-      ),
     );
   }
 }

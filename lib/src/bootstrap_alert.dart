@@ -19,6 +19,7 @@ class BootstrapAlert extends StatefulWidget {
 
 class _BootstrapAlertState extends State<BootstrapAlert> {
   bool _visible = true;
+  late Widget _closeButton;
 
   final Map<BootstrapAlertType, Color> _textColor = const {
     BootstrapAlertType.defaults: BootstrapColors.alertDefaultText,
@@ -43,6 +44,25 @@ class _BootstrapAlertState extends State<BootstrapAlert> {
     BootstrapAlertType.warning: BootstrapColors.alertWarningBorder,
     BootstrapAlertType.danger: BootstrapColors.alertDangerBorder,
   };
+
+  @override
+  void initState() {
+    super.initState();
+    _closeButton = Opacity(
+      opacity: 0.2,
+      child: IconButton(
+        icon: Icon(Icons.close_sharp),
+        iconSize: 18,
+        padding: const EdgeInsets.all(0),
+        constraints: const BoxConstraints(),
+        onPressed: () {
+          setState(() {
+            _visible = false;
+          });
+        },
+      ),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -72,31 +92,14 @@ class _BootstrapAlertState extends State<BootstrapAlert> {
                 child: Row(
                   children: [
                     widget.child,
-                    Spacer(),
-                    widget.dismissble ? _buildCloseButton() : SizedBox(),
+                    const Spacer(),
+                    widget.dismissble ? _closeButton : const SizedBox(),
                   ],
                 ),
               ),
             ),
           ),
         ),
-      ),
-    );
-  }
-
-  Widget _buildCloseButton() {
-    return Opacity(
-      opacity: 0.2,
-      child: IconButton(
-        icon: Icon(Icons.close_sharp),
-        iconSize: 18,
-        padding: const EdgeInsets.all(0),
-        constraints: BoxConstraints(),
-        onPressed: () {
-          setState(() {
-            _visible = false;
-          });
-        },
       ),
     );
   }

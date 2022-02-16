@@ -60,7 +60,7 @@ class BootstrapBreadcrumbs extends StatelessWidget {
                   size: iconSize,
                   color: color,
                 )
-              : SizedBox(),
+              : const SizedBox(),
           Text(
             item.text,
             style: TextStyle(
@@ -74,8 +74,8 @@ class BootstrapBreadcrumbs extends StatelessWidget {
   }
 
   Widget _buildSeparation() {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 5),
+    return const Padding(
+      padding: EdgeInsets.symmetric(horizontal: 5),
       child: Text(
         '/',
         style: TextStyle(

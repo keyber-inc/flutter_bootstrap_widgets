@@ -32,7 +32,7 @@ class BootstrapRadio extends StatelessWidget {
             activeColor: BootstrapColors.primary,
           ),
           DefaultTextStyle.merge(
-            style: TextStyle(
+            style: const TextStyle(
               fontWeight: FontWeight.w400,
               color: BootstrapColors.grayDark,
             ),

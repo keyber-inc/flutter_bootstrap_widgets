@@ -58,44 +58,27 @@ class BootstrapListItem extends StatelessWidget {
   }
 
   Widget _buildBullet(BootstrapListType type, int index) {
-    Widget? bullet;
     switch (type) {
       case BootstrapListType.unordered:
-        bullet = _buildBulletBlack();
-        break;
+        // 黒い丸
+        return const Padding(
+          padding: const EdgeInsets.only(left: 24, right: 12),
+          child: CircleAvatar(
+            radius: 2.0,
+            backgroundColor: Colors.black,
+          ),
+        );
       case BootstrapListType.ordered:
-        bullet = _buildOrdered(index);
-        break;
+        // 数字
+        return Padding(
+          padding: const EdgeInsets.only(left: 20),
+          child: Text(
+            '${index + 1}.  ',
+          ),
+        );
       case BootstrapListType.unstyled:
         break;
     }
-    if (bullet == null) {
-      return Container();
-    }
-    return Container(
-      padding: const EdgeInsets.only(left: 12),
-      child: bullet,
-    );
-  }
-
-  // 黒い丸
-  Widget _buildBulletBlack() {
-    return Container(
-      padding: const EdgeInsets.only(left: 12, right: 12),
-      child: CircleAvatar(
-        radius: 2.0,
-        backgroundColor: Colors.black,
-      ),
-    );
-  }
-
-  // 数字
-  Widget _buildOrdered(int index) {
-    return Container(
-      padding: const EdgeInsets.only(left: 8),
-      child: Text(
-        '${index + 1}.  ',
-      ),
-    );
+    return const SizedBox();
   }
 }

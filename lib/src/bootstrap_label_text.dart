@@ -14,7 +14,7 @@ class BootstrapLabelText extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.only(bottom: bottomPadding),
       child: DefaultTextStyle.merge(
-        style: TextStyle(
+        style: const TextStyle(
           fontWeight: FontWeight.w700,
           fontSize: 14,
         ),

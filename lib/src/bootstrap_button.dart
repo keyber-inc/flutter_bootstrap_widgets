@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 
 import 'bootstrap_colors.dart';
 
@@ -9,6 +8,10 @@ class BootstrapButton extends StatelessWidget {
     this.onPressed,
     this.onLongPress,
     required this.child,
+    this.onHover,
+    this.onFocusChange,
+    this.focusNode,
+    this.autofocus = false,
     this.type = BootstrapButtonType.defaults,
     this.size = BootstrapButtonSize.defaults,
     this.outline = false,
@@ -16,6 +19,10 @@ class BootstrapButton extends StatelessWidget {
 
   final VoidCallback? onPressed;
   final VoidCallback? onLongPress;
+  final ValueChanged<bool>? onHover;
+  final ValueChanged<bool>? onFocusChange;
+  final FocusNode? focusNode;
+  final bool autofocus;
   final Widget child;
   final BootstrapButtonType type;
   final BootstrapButtonSize size;
@@ -90,7 +97,7 @@ class BootstrapButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Opacity(
       opacity: onPressed == null ? 0.65 : 1,
-      child: FlatButton(
+      child: TextButton(
         child: DefaultTextStyle.merge(
           style: TextStyle(
             fontSize: _fontSize[size],
@@ -99,29 +106,30 @@ class BootstrapButton extends StatelessWidget {
           ),
           child: child,
         ),
-        padding: EdgeInsets.only(
-          left: _paddingHorizontal[size]!,
-          right: _paddingHorizontal[size]!,
-          top: _paddingVertical[size]!,
-          bottom: _paddingVertical[size]!,
-        ),
-        height: 0,
-        minWidth: 0,
-        color: outline ? Colors.transparent : _backgroundColor[type],
-        disabledColor: outline ? Colors.transparent : _backgroundColor[type],
-        hoverColor: outline ? _backgroundColor[type] : Colors.transparent,
-        shape: OutlineInputBorder(
-          borderRadius: BorderRadius.all(
-            Radius.circular(
+        style: TextButton.styleFrom(
+          backgroundColor:
+              outline ? Colors.transparent : _backgroundColor[type],
+          padding: EdgeInsets.only(
+            left: _paddingHorizontal[size]!,
+            right: _paddingHorizontal[size]!,
+            top: _paddingVertical[size]!,
+            bottom: _paddingVertical[size]!,
+          ),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(
               _borderRadius[size]!,
             ),
           ),
-          borderSide: BorderSide(
+          side: BorderSide(
             color: _borderColor[type]!,
           ),
         ),
         onPressed: onPressed,
         onLongPress: onLongPress,
+        onHover: onHover,
+        onFocusChange: onFocusChange,
+        focusNode: focusNode,
+        autofocus: autofocus,
       ),
     );
   }

@@ -7,6 +7,22 @@ class ButtonsPage extends StatelessWidget {
   static const route = '/buttons';
   static const title = 'Buttons';
 
+  final VoidCallback _onPressed = () {
+    print('onPressed');
+  };
+
+  final VoidCallback _onLongPressed = () {
+    print('onLongPressed');
+  };
+
+  final ValueChanged<bool> _onHover = (value) {
+    print('onHover: $value');
+  };
+
+  final ValueChanged<bool> _onFocusChange = (value) {
+    print('onFocusChange: $value');
+  };
+
   @override
   Widget build(BuildContext context) {
     return DefaultLayout(
@@ -43,32 +59,50 @@ class ButtonsPage extends StatelessWidget {
                         children: [
                           BootstrapButton(
                             child: Text('Default'),
-                            onPressed: () => print('onPressed'),
+                            onPressed: _onPressed,
+                            onLongPress: _onLongPressed,
+                            onHover: _onHover,
+                            onFocusChange: _onFocusChange,
                           ),
                           BootstrapButton(
                             type: BootstrapButtonType.primary,
                             child: Text('Primary'),
-                            onPressed: () => print('onPressed'),
+                            onPressed: _onPressed,
+                            onLongPress: _onLongPressed,
+                            onHover: _onHover,
+                            onFocusChange: _onFocusChange,
                           ),
                           BootstrapButton(
                             type: BootstrapButtonType.success,
                             child: Text('Success'),
-                            onPressed: () => print('onPressed'),
+                            onPressed: _onPressed,
+                            onLongPress: _onLongPressed,
+                            onHover: _onHover,
+                            onFocusChange: _onFocusChange,
                           ),
                           BootstrapButton(
                             type: BootstrapButtonType.info,
                             child: Text('Info'),
-                            onPressed: () => print('onPressed'),
+                            onPressed: _onPressed,
+                            onLongPress: _onLongPressed,
+                            onHover: _onHover,
+                            onFocusChange: _onFocusChange,
                           ),
                           BootstrapButton(
                             type: BootstrapButtonType.warning,
                             child: Text('Warning'),
-                            onPressed: () => print('onPressed'),
+                            onPressed: _onPressed,
+                            onLongPress: _onLongPressed,
+                            onHover: _onHover,
+                            onFocusChange: _onFocusChange,
                           ),
                           BootstrapButton(
                             type: BootstrapButtonType.danger,
                             child: Text('Danger'),
-                            onPressed: () => print('onPressed'),
+                            onPressed: _onPressed,
+                            onLongPress: _onLongPressed,
+                            onHover: _onHover,
+                            onFocusChange: _onFocusChange,
                           ),
                         ],
                       ),
@@ -117,36 +151,46 @@ class ButtonsPage extends StatelessWidget {
                             type: BootstrapButtonType.primary,
                             size: BootstrapButtonSize.large,
                             child: Text('Large button'),
-                            onPressed: () => print('onPressed'),
+                            onPressed: _onPressed,
+                            onLongPress: _onLongPressed,
+                            onHover: _onHover,
+                            onFocusChange: _onFocusChange,
                           ),
                           BootstrapButton(
                             type: BootstrapButtonType.primary,
                             child: Text('Default button'),
-                            onPressed: () => print('onPressed'),
+                            onPressed: _onPressed,
+                            onLongPress: _onLongPressed,
+                            onHover: _onHover,
+                            onFocusChange: _onFocusChange,
                           ),
                           BootstrapButton(
                             type: BootstrapButtonType.primary,
                             size: BootstrapButtonSize.small,
                             child: Text('Small button'),
-                            onPressed: () => print('onPressed'),
+                            onPressed: _onPressed,
+                            onLongPress: _onLongPressed,
+                            onHover: _onHover,
+                            onFocusChange: _onFocusChange,
                           ),
                           BootstrapButton(
                             type: BootstrapButtonType.primary,
                             size: BootstrapButtonSize.mini,
                             child: Text('Mini button'),
-                            onPressed: () => print('onPressed'),
+                            onPressed: _onPressed,
+                            onLongPress: _onLongPressed,
+                            onHover: _onHover,
+                            onFocusChange: _onFocusChange,
                           ),
                         ],
                       ),
                     ),
                     BootstrapParagraphs(
-                      child: Expanded(
-                        child: BootstrapButton(
-                          type: BootstrapButtonType.primary,
-                          size: BootstrapButtonSize.large,
-                          child: Text('Block level button'),
-                          onPressed: () => print('onPressed'),
-                        ),
+                      child: BootstrapButton(
+                        type: BootstrapButtonType.primary,
+                        size: BootstrapButtonSize.large,
+                        child: Text('Block level button'),
+                        onPressed: _onPressed,
                       ),
                     ),
                   ],
@@ -170,37 +214,55 @@ class ButtonsPage extends StatelessWidget {
                         children: [
                           BootstrapButton(
                             child: Text('Default'),
-                            onPressed: () => print('onPressed'),
+                            onPressed: _onPressed,
+                            onLongPress: _onLongPressed,
+                            onHover: _onHover,
+                            onFocusChange: _onFocusChange,
                             outline: true,
                           ),
                           BootstrapButton(
                             type: BootstrapButtonType.primary,
                             child: Text('Primary'),
-                            onPressed: () => print('onPressed'),
+                            onPressed: _onPressed,
+                            onLongPress: _onLongPressed,
+                            onHover: _onHover,
+                            onFocusChange: _onFocusChange,
                             outline: true,
                           ),
                           BootstrapButton(
                             type: BootstrapButtonType.success,
                             child: Text('Success'),
-                            onPressed: () => print('onPressed'),
+                            onPressed: _onPressed,
+                            onLongPress: _onLongPressed,
+                            onHover: _onHover,
+                            onFocusChange: _onFocusChange,
                             outline: true,
                           ),
                           BootstrapButton(
                             type: BootstrapButtonType.info,
                             child: Text('Info'),
-                            onPressed: () => print('onPressed'),
+                            onPressed: _onPressed,
+                            onLongPress: _onLongPressed,
+                            onHover: _onHover,
+                            onFocusChange: _onFocusChange,
                             outline: true,
                           ),
                           BootstrapButton(
                             type: BootstrapButtonType.warning,
                             child: Text('Warning'),
-                            onPressed: () => print('onPressed'),
+                            onPressed: _onPressed,
+                            onLongPress: _onLongPressed,
+                            onHover: _onHover,
+                            onFocusChange: _onFocusChange,
                             outline: true,
                           ),
                           BootstrapButton(
                             type: BootstrapButtonType.danger,
                             child: Text('Danger'),
-                            onPressed: () => print('onPressed'),
+                            onPressed: _onPressed,
+                            onLongPress: _onLongPressed,
+                            onHover: _onHover,
+                            onFocusChange: _onFocusChange,
                             outline: true,
                           ),
                         ],
@@ -217,41 +279,51 @@ class ButtonsPage extends StatelessWidget {
                             type: BootstrapButtonType.primary,
                             size: BootstrapButtonSize.large,
                             child: Text('Large button'),
-                            onPressed: () => print('onPressed'),
+                            onPressed: _onPressed,
+                            onLongPress: _onLongPressed,
+                            onHover: _onHover,
+                            onFocusChange: _onFocusChange,
                             outline: true,
                           ),
                           BootstrapButton(
                             type: BootstrapButtonType.primary,
                             child: Text('Default button'),
-                            onPressed: () => print('onPressed'),
+                            onPressed: _onPressed,
+                            onLongPress: _onLongPressed,
+                            onHover: _onHover,
+                            onFocusChange: _onFocusChange,
                             outline: true,
                           ),
                           BootstrapButton(
                             type: BootstrapButtonType.primary,
                             size: BootstrapButtonSize.small,
                             child: Text('Small button'),
-                            onPressed: () => print('onPressed'),
+                            onPressed: _onPressed,
+                            onLongPress: _onLongPressed,
+                            onHover: _onHover,
+                            onFocusChange: _onFocusChange,
                             outline: true,
                           ),
                           BootstrapButton(
                             type: BootstrapButtonType.primary,
                             size: BootstrapButtonSize.mini,
                             child: Text('Mini button'),
-                            onPressed: () => print('onPressed'),
+                            onPressed: _onPressed,
+                            onLongPress: _onLongPressed,
+                            onHover: _onHover,
+                            onFocusChange: _onFocusChange,
                             outline: true,
                           ),
                         ],
                       ),
                     ),
                     BootstrapParagraphs(
-                      child: Expanded(
-                        child: BootstrapButton(
-                          type: BootstrapButtonType.primary,
-                          size: BootstrapButtonSize.large,
-                          child: Text('Block level button'),
-                          onPressed: () => print('onPressed'),
-                          outline: true,
-                        ),
+                      child: BootstrapButton(
+                        type: BootstrapButtonType.primary,
+                        size: BootstrapButtonSize.large,
+                        child: Text('Block level button'),
+                        onPressed: _onPressed,
+                        outline: true,
                       ),
                     ),
                   ],

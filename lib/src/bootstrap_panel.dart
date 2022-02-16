@@ -75,7 +75,7 @@ class BootstrapPanel extends StatelessWidget {
               Container(
                 decoration: BoxDecoration(
                   color: _backgroundColor[type],
-                  border: Border(
+                  border: const Border(
                     bottom: BorderSide(
                       color: BootstrapColors.panelDefaultBorder,
                       width: 1.0,
@@ -89,7 +89,7 @@ class BootstrapPanel extends StatelessWidget {
                   style: TextStyle(
                     color: _textColor[type],
                   ),
-                  child: header ?? SizedBox(),
+                  child: header ?? const SizedBox(),
                 ),
               ),
             if (body != null)
@@ -101,7 +101,7 @@ class BootstrapPanel extends StatelessWidget {
               ),
             if (footer != null)
               Container(
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   color: BootstrapColors.defaults,
                   border: Border(
                     top: BorderSide(
@@ -114,10 +114,10 @@ class BootstrapPanel extends StatelessWidget {
                     left: 15, right: 15, top: 10, bottom: 10),
                 width: double.infinity,
                 child: DefaultTextStyle.merge(
-                  style: TextStyle(
+                  style: const TextStyle(
                     color: BootstrapColors.grayDark,
                   ),
-                  child: footer ?? SizedBox(),
+                  child: footer ?? const SizedBox(),
                 ),
               ),
           ],

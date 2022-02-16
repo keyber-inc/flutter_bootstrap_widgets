@@ -103,7 +103,7 @@ class _BootstrapMultiSelectState extends State<BootstrapMultiSelect> {
       color: Colors.white,
       shadowColor: Colors.transparent,
       shape: RoundedRectangleBorder(
-        side: BorderSide(
+        side: const BorderSide(
           color: BootstrapColors.textFormFieldBorder,
           width: 1.0,
         ),
