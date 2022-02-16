@@ -97,9 +97,11 @@ class DefaultLayout extends StatelessWidget {
           }
         },
       ),
-      body: BootstrapContainer(
-        fluid: true,
-        children: children,
+      body: SingleChildScrollView(
+        child: BootstrapContainer(
+          fluid: true,
+          children: children,
+        ),
       ),
     );
   }
