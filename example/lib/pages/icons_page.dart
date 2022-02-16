@@ -61,7 +61,7 @@ class _IconsPageState extends State<IconsPage> {
 
   void _onChangedSearchMaxCount(dynamic max) {
     setState(() {
-      _searchMaxCount = int.parse(max);
+      _searchMaxCount = max;
       _willSearch = true;
     });
   }
@@ -113,7 +113,7 @@ class _IconsPageState extends State<IconsPage> {
                     ),
                     BootstrapSelect(
                       isExpanded: false,
-                      value: 100,
+                      value: _searchMaxCount,
                       options: [
                         BootstrapOption(name: '50', value: 50),
                         BootstrapOption(name: '100', value: 100),
