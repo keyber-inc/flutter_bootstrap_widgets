@@ -120,7 +120,6 @@ class BootstrapHeading extends StatelessWidget {
           ),
         );
     }
-    throw AssertionError('invalid BootstrapHeadingType');
   }
 }
 
