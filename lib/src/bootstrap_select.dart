@@ -115,7 +115,7 @@ class _BootstrapMultiSelectState extends State<BootstrapMultiSelect> {
         width: double.infinity,
         padding: const EdgeInsets.only(left: 10, top: 5, right: 5, bottom: 5),
         child: Scrollbar(
-          isAlwaysShown: true,
+          thumbVisibility: true,
           controller: _scrollController,
           child: ListView.builder(
             controller: _scrollController,
