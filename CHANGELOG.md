@@ -1,3 +1,9 @@
+## 1.2.0 - August 6, 2025
+
+- Fix Flutter 3.27+ compatibility: replace isAlwaysShown with thumbVisibility #1
+- Upgrade minimum Dart SDK version to 3.0.0
+- Fixed warning
+
 ## 1.1.0 - February 16, 2022
 
 - Performance improvements
