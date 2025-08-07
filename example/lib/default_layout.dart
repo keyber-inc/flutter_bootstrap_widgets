@@ -23,55 +23,55 @@ class DefaultLayout extends StatelessWidget {
   final List<Widget> children;
   final String route;
 
-  final List<MenuItem> _sidebarItemDatas = const [
-    MenuItem(
+  final List<AdminMenuItem> _sidebarItemDatas = const [
+    AdminMenuItem(
       title: TopPage.title,
       route: TopPage.route,
       icon: Icons.dashboard,
     ),
-    MenuItem(
+    AdminMenuItem(
       title: 'CSS',
       icon: Icons.edit,
       children: [
-        MenuItem(
+        AdminMenuItem(
           title: TypographyPage.title,
           route: TypographyPage.route,
         ),
-        MenuItem(
+        AdminMenuItem(
           title: FormsPage.title,
           route: FormsPage.route,
         ),
-        MenuItem(
+        AdminMenuItem(
           title: ButtonsPage.title,
           route: ButtonsPage.route,
         ),
       ],
     ),
-    MenuItem(
+    AdminMenuItem(
       title: 'Components',
       icon: Icons.settings,
       children: [
-        MenuItem(
+        AdminMenuItem(
           title: IconsPage.title,
           route: IconsPage.route,
         ),
-        MenuItem(
+        AdminMenuItem(
           title: BreadcrumbsPage.title,
           route: BreadcrumbsPage.route,
         ),
-        MenuItem(
+        AdminMenuItem(
           title: LabelsPage.title,
           route: LabelsPage.route,
         ),
-        MenuItem(
+        AdminMenuItem(
           title: AlertsPage.title,
           route: AlertsPage.route,
         ),
-        MenuItem(
+        AdminMenuItem(
           title: ModalsPage.title,
           route: ModalsPage.route,
         ),
-        MenuItem(
+        AdminMenuItem(
           title: PanelsPage.title,
           route: PanelsPage.route,
         ),

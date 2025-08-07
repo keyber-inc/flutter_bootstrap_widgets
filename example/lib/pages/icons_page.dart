@@ -1603,9 +1603,6 @@ class _IconsPageState extends State<IconsPage> {
     {'icon': Icons.circle, 'name': 'circle'},
     {'icon': Icons.circle_notifications, 'name': 'circle_notifications'},
     {'icon': Icons.class_, 'name': 'class_'},
-    {'icon': Icons.class__outlined, 'name': 'class__outlined'},
-    {'icon': Icons.class__rounded, 'name': 'class__rounded'},
-    {'icon': Icons.class__sharp, 'name': 'class__sharp'},
     {'icon': Icons.clean_hands, 'name': 'clean_hands'},
     {'icon': Icons.clean_hands_outlined, 'name': 'clean_hands_outlined'},
     {'icon': Icons.clean_hands_rounded, 'name': 'clean_hands_rounded'},
@@ -5691,7 +5688,6 @@ class _IconsPageState extends State<IconsPage> {
       'name': 'pie_chart_outline_rounded'
     },
     {'icon': Icons.pie_chart_outline_sharp, 'name': 'pie_chart_outline_sharp'},
-    {'icon': Icons.pie_chart_outlined, 'name': 'pie_chart_outlined'},
     {'icon': Icons.pie_chart_rounded, 'name': 'pie_chart_rounded'},
     {'icon': Icons.pie_chart_sharp, 'name': 'pie_chart_sharp'},
     {'icon': Icons.pin_drop, 'name': 'pin_drop'},
